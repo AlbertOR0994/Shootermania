@@ -1,0 +1,47 @@
+#main {
+    border: solid 1px black;
+    width: 100em;
+    height: 50em;
+    margin: 0 auto;
+    position: relative;
+    top: 200px;
+    background-size:contain;
+    background-color: red;
+    
+}
+
+#status {
+    background-color: yellow;
+    border: solid 1px black;
+    width: 80em;
+    margin: 0 auto;
+    height: 2.5em;
+    display: flex;
+}
+
+.stats {
+    background-color: aqua;
+    border: solid 1px black;
+    height: 40px;
+    width: 200px;
+    margin: 0 auto;
+}
+
+#game {
+background-color: green;
+    width: 100em;
+    height: 15em;
+    margin: 0 auto;
+    position: relative;
+    top: 500px;
+
+}
+
+html{
+    background-color: black;
+}
+
+/* Ronboide para la calle - Bonus */
+/* border-right: 60px solid transparent;
+    border-left: 60px solid transparent;
+    border-bottom: 100px solid #428bca; */
