@@ -1,13 +1,12 @@
-#main {
-    border: solid 1px black;
-    width: 100em;
+.main {
+      border: solid 1px black;
+    width: 90em;
     height: 50em;
     margin: 0 auto;
     position: relative;
-    top: 200px;
+    top: 50px;
     background-size:contain;
     background-color: red;
-    
 }
 
 #status {
@@ -29,17 +28,66 @@
 
 #game {
 background-color: green;
-    width: 100em;
+    width: 90em;
     height: 15em;
     margin: 0 auto;
     position: relative;
     top: 500px;
-
 }
 
 html{
+    background-color: white;
+}
+
+#pre-game{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px black;
+    width: 90em;
+    height: 50em;
+    margin: 0 auto;
+    position: absolute;
+    background-size:contain;
+    background-image: url(./../assets/background/9SYf0EO.png);
+    z-index: 5;
+}
+
+.btn{
+    padding: 20px 30px 20px 30px;
+    background: radial-gradient(blue, black);
+    color: white;
+    margin-top: 20px;
+    font-weight: 800;
+    font-family: Arial, Helvetica, sans-serif;
+    filter: drop-shadow(10px 10px 4px black);
+}
+
+.btn:hover{
+    background: radial-gradient(green,black);
+    color:yellow;
+    font-weight: 800;
+}
+
+#menu{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(128, 128, 128, 0.524);
+    padding: 30px 40px 30px 40px;
+    font-weight: 800;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 20px 20px 10px 10px;
+    filter: drop-shadow(10px 10px 4px black);
+}
+
+#tutorial-image{
     background-color: black;
 }
+
 
 /* Ronboide para la calle - Bonus */
 /* border-right: 60px solid transparent;
