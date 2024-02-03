@@ -84,8 +84,20 @@ html{
     filter: drop-shadow(10px 10px 4px black);
 }
 
-#tutorial-image{
-    background-color: black;
+#tutorial-image {
+    position: absolute;
+    z-index: 99;
+    left: 30%;
+    top: 10%;
+    display: none;
+}
+
+#tutorial-image img{
+   width: 60%;
+}
+#close-tutorial{
+    position: absolute;
+
 }
 
 
