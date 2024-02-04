@@ -13,6 +13,9 @@ start.addEventListener('click', () => {
     let player = new Sam(690, 100, board, 3, 25)
     player.insertSam()
 
+    let enemy = new Enemy(600, 100, board, player)
+    enemy.insertEnemy()
+
     window.addEventListener('keydown', (e) => {
         switch(e.key){
           case 'a':
@@ -28,6 +31,21 @@ start.addEventListener('click', () => {
             player.directionY = 1
             break
           }
+        // Funcion para pausar 
+        //   const intervalPause = setInterval( () => {
+        //     window.addEventListener('keydown', (e) => {
+        //         if (e.key === "Escape") {
+        //             mPause.style.display = 'flex'
+        //             reset.addEventListener('click', () => {
+        //             })
+        //         }
+        //         window.addEventListener('keydown', (e) => {
+        //             if (e.key === "Escape") {
+        //                 mPause.style.display = 'none'
+        //             }
+        //         })
+        //     })
+        // }, 1000)
       })
       
     window.addEventListener('keyup', (e) => {

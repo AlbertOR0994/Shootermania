@@ -1,9 +1,9 @@
 class Sam {
-    constructor (x, y, parent, health, bullets){
+    constructor (x, y, parent){
         this.x = x
         this.y = y
-        this.health = health
-        this.speed = 5
+        this.health = 3
+        this.speed = 8
         this.bullets = bullets
         this.timerId = null
         this.sprite
