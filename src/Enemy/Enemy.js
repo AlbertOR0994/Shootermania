@@ -1,5 +1,5 @@
 class Enemy {
-    constructor (x, y, health, sam){
+    constructor (x, y, health, parent, sam){
         this.x = x
         this.y = y
         this.health = health
@@ -9,28 +9,15 @@ class Enemy {
         this.sprite
     }
     insertEnemy(){
-
+        const game = document.getElementById('game')
+        const newEnemy = document.createElement('div');
+        newEnemy.setAttribute('id', 'enemy')
+        newEnemy.style.left = this.x
+        newEnemy.style.top = this.y
+        game.appendChild(newEnemy);
     }
-    // Eje Y positivo es ir hacia abajo
-    moveTop(){
-
-    }
-    // Eje X positivo es ir a la derecha
-    moveRight(){
-
-    }
-    // Eje X Negativo es ir a la izquierda
-    moveLeft(){
-
-    }
-    // Eje Y negativo es ir hacia arriba
-    moveBottom(){
-
-    }
-
-    nextRngStep(){
-
-    }
+    
+    //Rng
 
     // Disparar a un enemigo
     shootSam(){
