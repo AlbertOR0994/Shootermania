@@ -93,16 +93,23 @@ html{
     background-image: url(./../assets/background/prueba.jpg);
     background-repeat: no-repeat;
     background-size: contain;
+    width: 600px;
+    height: 600px;
 }
 
-#tutorial-image img{
-   width: 60%;
-}
 /* Pendiente añadir imagen de controles para jugar */
 #close-tutorial{
     position: absolute;
-    right: 415px
+    right: 10px;
+    margin-top: 0;
 }
+#sam {
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+    position: absolute;
+    
+  }
 
 
 /* Ronboide para la calle - Bonus */
