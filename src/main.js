@@ -15,5 +15,5 @@ tutorial.addEventListener('click', () => {
 
 closeTuto.addEventListener('click', () => {
     pTutorial.style.display = 'none'
-
 })
+

@@ -8,7 +8,7 @@
     background-size:contain;
     background-color: red;
 }
-
+/* Estadisticas generales de la partida */
 #status {
     background-color: yellow;
     border: solid 1px black;
@@ -17,7 +17,7 @@
     height: 2.5em;
     display: flex;
 }
-
+/* Cada estadistica */
 .stats {
     background-color: aqua;
     border: solid 1px black;
@@ -25,7 +25,7 @@
     width: 200px;
     margin: 0 auto;
 }
-
+/* Zona de juego  */
 #game {
 background-color: green;
     width: 90em;
@@ -34,11 +34,11 @@ background-color: green;
     position: relative;
     top: 500px;
 }
-
+/* Web en negro para no sangrar los ojos :) */
 html{
-    background-color: white;
+    background-color: black;
 }
-
+/* Pantalla de menú */
 #pre-game{
     display: flex;
     flex-direction: column;
@@ -53,7 +53,7 @@ html{
     background-image: url(./../assets/background/9SYf0EO.png);
     z-index: 5;
 }
-
+/* botones */
 .btn{
     padding: 20px 30px 20px 30px;
     background: radial-gradient(blue, black);
@@ -63,13 +63,13 @@ html{
     font-family: Arial, Helvetica, sans-serif;
     filter: drop-shadow(10px 10px 4px black);
 }
-
+/* efecto para los botones */
 .btn:hover{
     background: radial-gradient(green,black);
     color:yellow;
     font-weight: 800;
 }
-
+/*Cuadro de menu */
 #menu{
     display:flex;
     flex-direction: column;
@@ -86,18 +86,22 @@ html{
 
 #tutorial-image {
     position: absolute;
-    z-index: 99;
+    z-index: 10;
     left: 30%;
     top: 10%;
     display: none;
+    background-image: url(./../assets/background/prueba.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 #tutorial-image img{
    width: 60%;
 }
+/* Pendiente añadir imagen de controles para jugar */
 #close-tutorial{
     position: absolute;
-
+    right: 415px
 }
 
 
