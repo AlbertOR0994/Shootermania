@@ -41,7 +41,6 @@ class Sam {
           this.sprite.style.top = this.y + 'px'
         } 
     }
-    
     // Disparar a un enemigo
     shootEnemy(){
 

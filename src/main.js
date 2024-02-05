@@ -14,9 +14,11 @@ const started = start.addEventListener('click', () => {
     player.insertSam()
 
     let timerId = setInterval(() => {
+    
         playerMovement()
       }, 24)
-    window.addEventListener('keydown', (e) => {
+    
+      window.addEventListener('keypress', (e) => {
         switch(e.key){
           case 'a':
             player.directionX = -1
@@ -33,24 +35,33 @@ const started = start.addEventListener('click', () => {
           }
       })
       
-    window.addEventListener('keyup', (e) => {
+    window.addEventListener('keydown', (e) => {
         if(e.key === 'a' || e.key === 'd' || e.key === 'w' || e.key === 's'){
           player.directionX = 0
           player.directionY = 0
         }
       })
-     
+    
      
       let enemies = []
 
-      function createEnemy(){
+      function createEnemyLeft(){
         const rngY = Math.floor(Math.random() * 170 )
-        let enemy = new Enemy(-60,rngY,1,game,player,enemies)
+        let enemy = new Enemy(-60,rngY,1,1,game,player,enemies)
         enemy.insertEnemy()
-        const timerEnemy = setInterval(enemy.moveX,24)
+        enemy.timerEnemy = setInterval(enemy.moveX,24)
         enemies.push(enemy)     
     }
-      let timerEnemy = setInterval(createEnemy ,2500)
+
+    function createEnemyRight(){
+        const rngY = Math.floor(Math.random() * 170 )
+        let enemy = new Enemy(1400,rngY,1,1,game,player,enemies)
+        enemy.insertEnemy()
+        enemy.timerEnemy = setInterval(enemy.moveX,24)
+        enemies.push(enemy)     
+    }
+
+      let timerEn = setInterval(createEnemyLeft ,4000)
 
     function playerMovement(){
       player.moveX()
@@ -71,7 +82,7 @@ closeTuto.addEventListener('click', () => {
 const intervalPause = setInterval( () => {
     window.addEventListener('keydown', (e) => {
         if (e.key === "Escape") {
-            mPause.style.display = 'flex'
+            mPause.style.display = 'flex'            
             reset.addEventListener('click', () => {
                 window.location.reload()
             })
@@ -79,6 +90,7 @@ const intervalPause = setInterval( () => {
         window.addEventListener('keydown', (e) => {
             if (e.key === "Escape") {
                 mPause.style.display = 'none'
+              
             }
         })
     })

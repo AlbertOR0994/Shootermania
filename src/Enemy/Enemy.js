@@ -1,5 +1,5 @@
 class Enemy {
-    constructor (x, y, health,parent,sam, enemies){
+    constructor (x, y, directionX, health,parent,sam, enemies){
         this.x = x
         this.y = y
         this.health = health
@@ -8,6 +8,7 @@ class Enemy {
         this.sam = sam
         this.timerId = null
         this.sprite
+        this.directionX = directionX
         this.width = 50
         this.height = 50
         this.timerEnemy
@@ -28,12 +29,18 @@ class Enemy {
     }
     moveX(){
             this.x += this.speed
-            if(this.x >= -60 && this.x <= 1450)
+            if(this.x >= -60 && this.x <= 1450 && this.directionX == 1){
             this.sprite.style.left = this.x + 'px'
             this.checkCollision()
-            if(this.x > 1450){
+            }
+            else{
                 this.removeEnemy()
             }
+            if(this.directionX == -1 && this.x >= 0){
+                this.x -= this
+                this.sprite.style.left = this.x + 'px'
+            }
+
     }
 
 
@@ -51,6 +58,7 @@ class Enemy {
         this.y < (this.sam.y + this.sam.height) && 
         (this.y + this.height) > this.sam.y){
             this.sam.health -= 1
+            console.log(this.sam.health)
             this.removeEnemy()
             
         }
