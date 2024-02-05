@@ -38,8 +38,6 @@ class Enemy {
             }
     }
 
-
-
     removeEnemy(){
         this.parent.removeChild(this.sprite)
         clearInterval(this.timerEnemy)

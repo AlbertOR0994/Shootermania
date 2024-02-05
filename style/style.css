@@ -27,7 +27,8 @@
 }
 /* Zona de juego  */
 #game {
-background-color: green;
+    display:flex;
+    background-color: green;
     width: 90em;
     height: 15em;
     margin: 0 auto;
@@ -117,7 +118,12 @@ html{
 .enemy{
     border: solid 1px red;
     position:absolute;
-    background-color: yellow;
+    background-color: purple;
+}
+.bullet{
+    background-color: yellow ;
+    position: absolute;
+    border: solid 1px white;
 }
 
 #pause{

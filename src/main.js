@@ -10,6 +10,9 @@ const reset = document.getElementById('reset')
 const started = start.addEventListener('click', () => {
     pregame.remove()
 
+    let enemies = []
+    let bullets = []
+    
     const player = new Sam(690, 100,game, 3, 25)
     player.insertSam()
 
@@ -32,7 +35,12 @@ const started = start.addEventListener('click', () => {
         case 's':
             player.directionY = 1
             break
-          }
+            case "":
+                let bullet = new Bullets(player.x + 70 , player.y +15  ,1, game , enemies,player, bullets)
+                bullet.insertBullet()
+                bullets.push(bullet)
+                bullet.timerBullet = setInterval(bullet.move, 20)
+        }
       })
       
     window.addEventListener('keydown', (e) => {
@@ -43,7 +51,7 @@ const started = start.addEventListener('click', () => {
       })
     
      
-      let enemies = []
+      
 
       function createEnemyLeft(){
         const rngY = Math.floor(Math.random() * 170 )
