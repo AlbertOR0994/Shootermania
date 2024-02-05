@@ -13,6 +13,9 @@ const started = start.addEventListener('click', () => {
     const player = new Sam(690, 100,game, 3, 25)
     player.insertSam()
 
+    let timerId = setInterval(() => {
+        playerMovement()
+      }, 24)
     window.addEventListener('keydown', (e) => {
         switch(e.key){
           case 'a':
@@ -36,19 +39,16 @@ const started = start.addEventListener('click', () => {
           player.directionY = 0
         }
       })
-      let timerId = setInterval(() => {
-        playerMovement()
-      }, 24)
+     
      
       let enemies = []
 
       function createEnemy(){
         const rngY = Math.floor(Math.random() * 170 )
-        let enemy = new Enemy(-60,rngY,1,game,player)
+        let enemy = new Enemy(-60,rngY,1,game,player,enemies)
         enemy.insertEnemy()
-        const timerEn = setInterval(enemy.moveX,24)
-        enemies.push(enemy)
-        
+        const timerEnemy = setInterval(enemy.moveX,24)
+        enemies.push(enemy)     
     }
       let timerEnemy = setInterval(createEnemy ,2500)
 

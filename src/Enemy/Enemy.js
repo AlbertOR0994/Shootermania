@@ -1,5 +1,5 @@
 class Enemy {
-    constructor (x, y, health,parent,sam){
+    constructor (x, y, health,parent,sam, enemies){
         this.x = x
         this.y = y
         this.health = health
@@ -10,8 +10,10 @@ class Enemy {
         this.sprite
         this.width = 50
         this.height = 50
-        this.timerEn
+        this.timerEnemy
+        this.enemies = enemies
         this.moveX = this.moveX.bind(this)
+        
     }
 
     insertEnemy(){
@@ -28,13 +30,30 @@ class Enemy {
             this.x += this.speed
             if(this.x >= -60 && this.x <= 1450)
             this.sprite.style.left = this.x + 'px'
+            this.checkCollision()
             if(this.x > 1450){
                 this.removeEnemy()
             }
     }
 
-    removeEnemy(){
 
+
+    removeEnemy(){
+        this.parent.removeChild(this.sprite)
+        clearInterval(this.timerEnemy)
+        this.enemies.splice(this.enemies.indexOf(this.sprite), 1)
+        console.log(this.enemies)
+    }
+
+    checkCollision(){
+        if(this.x < (this.sam.x + this.sam.width) && 
+        (this.x + this.width)> this.sam.x &&
+        this.y < (this.sam.y + this.sam.height) && 
+        (this.y + this.height) > this.sam.y){
+            this.sam.health -= 1
+            this.removeEnemy()
+            
+        }
     }
 
     // Disparar a un enemigo
