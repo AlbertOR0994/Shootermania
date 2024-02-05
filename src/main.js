@@ -36,14 +36,27 @@ const started = start.addEventListener('click', () => {
           player.directionY = 0
         }
       })
-      let timerId = setInterval(playerMovement, 24)
-    
+      let timerId = setInterval(() => {
+        playerMovement()
+      }, 24)
+     
+      let enemies = []
+
+      function createEnemy(){
+        const rngY = Math.floor(Math.random() * 170 )
+        let enemy = new Enemy(-60,rngY,1,game,player)
+        enemy.insertEnemy()
+        const timerEn = setInterval(enemy.moveX,24)
+        enemies.push(enemy)
+        
+    }
+      let timerEnemy = setInterval(createEnemy ,2500)
+
     function playerMovement(){
       player.moveX()
       player.moveY()
     }
     intervalPause
-    game.pause()
 })
 
 tutorial.addEventListener('click', () => {
