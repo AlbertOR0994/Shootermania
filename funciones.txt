@@ -1,0 +1,59 @@
+class Sam () {
+    constructor (x, y, health, bullets, parent)
+    atributos
+    posicion inicial X 
+    posicion inicial Y 
+    Vidas 
+    Balas
+    velocidad
+    ancho 
+    alto 
+    dirección eje x 
+    dirección eje Y 
+    quien lo contiene 
+    estado de sam (vivo o muerto)
+    timer para el intervalo 
+}
+
+funciones
+    moveX() {
+        movimiento x deberá mover a Sam en el eje horizontal del contenedor
+    }
+
+    moveY(){
+        movimiento y deberá mover a Sam en el eje vertical del contenedor
+    }
+
+    shoot(){
+        Sam lanzara una bala ("un div pequeño")
+    }
+
+class Enemy() {
+    atributos
+    posición x
+    posicion y 
+    ancho 
+    alto
+    dirección x 
+    dirección y
+    vidas
+    daño
+    quien lo contiene 
+    velocidad
+    objeto modificable 
+    objeto Sam 
+    objeto Bullet
+    timer para el intervalo
+}
+
+funciones
+
+moveX (
+    los enemigos se moveran de izquierda a derecha o de derecha a izquierda
+)
+checkState (
+    Esta función le hará un check al enemigo para saber si ha recibido una bala
+)
+shootSam (
+    El enemigo dispará a Sam cada x tiempo
+)

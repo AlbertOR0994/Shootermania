@@ -3,14 +3,14 @@ const tutorial = document.getElementById('tutorial')
 const pregame = document.getElementById('pre-game')
 const pTutorial = document.getElementById('tutorial-image')
 const closeTuto = document.getElementById('close-tutorial')
-let board = document.getElementById('game')
+const mPause = document.getElementById('pause')
+const game = document.getElementById('game')
+const reset = document.getElementById('reset')
 
-
-
-start.addEventListener('click', () => {
+const started = start.addEventListener('click', () => {
     pregame.remove()
 
-    let player = new Sam(690, 100, board, 3, 25)
+    const player = new Sam(690, 100,game, 3, 25)
     player.insertSam()
 
     window.addEventListener('keydown', (e) => {
@@ -42,6 +42,8 @@ start.addEventListener('click', () => {
       player.moveX()
       player.moveY()
     }
+    intervalPause
+    game.pause()
 })
 
 tutorial.addEventListener('click', () => {
@@ -52,4 +54,26 @@ tutorial.addEventListener('click', () => {
 closeTuto.addEventListener('click', () => {
     pTutorial.style.display = 'none'
 })
+
+const intervalPause = setInterval( () => {
+    window.addEventListener('keydown', (e) => {
+        if (e.key === "Escape") {
+            mPause.style.display = 'flex'
+            reset.addEventListener('click', () => {
+                window.location.reload()
+            })
+        }
+        window.addEventListener('keydown', (e) => {
+            if (e.key === "Escape") {
+                mPause.style.display = 'none'
+            }
+        })
+    })
+}, 1000)
+
+
+
+
+
+
 
