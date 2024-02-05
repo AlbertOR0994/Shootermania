@@ -28,19 +28,14 @@ class Enemy {
         this.sprite = newEnemy
     }
     moveX(){
-            this.x += this.speed
-            if(this.x >= -60 && this.x <= 1450 && this.directionX == 1){
+            this.x += this.speed * this.directionX
+            if(this.x >= -60 && this.x <= 1500 ){
             this.sprite.style.left = this.x + 'px'
             this.checkCollision()
             }
             else{
                 this.removeEnemy()
             }
-            if(this.directionX == -1 && this.x >= 0){
-                this.x -= this
-                this.sprite.style.left = this.x + 'px'
-            }
-
     }
 
 
@@ -49,7 +44,6 @@ class Enemy {
         this.parent.removeChild(this.sprite)
         clearInterval(this.timerEnemy)
         this.enemies.splice(this.enemies.indexOf(this.sprite), 1)
-        console.log(this.enemies)
     }
 
     checkCollision(){
@@ -58,9 +52,7 @@ class Enemy {
         this.y < (this.sam.y + this.sam.height) && 
         (this.y + this.height) > this.sam.y){
             this.sam.health -= 1
-            console.log(this.sam.health)
-            this.removeEnemy()
-            
+            this.removeEnemy()  
         }
     }
 

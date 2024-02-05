@@ -31,7 +31,7 @@ class Sam {
           this.x += this.speed * this.directionX
           this.sprite.style.left = this.x + 'px'
         }
-        
+        this.isDead = false
       }
     // Movimiento vertical
     moveY(){
@@ -41,8 +41,21 @@ class Sam {
           this.sprite.style.top = this.y + 'px'
         } 
     }
+
+    checkStatus(){
+      if(this.health == 0){
+        console.log(this.health)
+        this.isDead = true
+      }
+      if(this.isDead === true){
+        // PANTALLA DE MUERTE 
+        window.location.reload()
+      }
+    }
     // Disparar a un enemigo
     shootEnemy(){
-
+      
+      const shoot = document.createElement('div')
+      shoot.setAttribute('class','shoot')
     }
 }

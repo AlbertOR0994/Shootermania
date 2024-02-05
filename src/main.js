@@ -14,7 +14,7 @@ const started = start.addEventListener('click', () => {
     player.insertSam()
 
     let timerId = setInterval(() => {
-    
+        player.checkStatus()
         playerMovement()
       }, 24)
     
@@ -55,15 +55,19 @@ const started = start.addEventListener('click', () => {
 
     function createEnemyRight(){
         const rngY = Math.floor(Math.random() * 170 )
-        let enemy = new Enemy(1400,rngY,1,1,game,player,enemies)
+        let enemy = new Enemy(1400,rngY,-1,1,game,player,enemies)
         enemy.insertEnemy()
         enemy.timerEnemy = setInterval(enemy.moveX,24)
         enemies.push(enemy)     
     }
 
-      let timerEn = setInterval(createEnemyLeft ,4000)
+      let timerEn = setInterval(() => {
+        createEnemyLeft()
+        createEnemyRight()
+      }, 4000)
 
     function playerMovement(){
+    
       player.moveX()
       player.moveY()
     }
