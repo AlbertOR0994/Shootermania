@@ -7,7 +7,7 @@ const mPause = document.getElementById('pause')
 const game = document.getElementById('game')
 const reset = document.getElementById('reset')
 
-start.addEventListener('click', () => {
+const started = start.addEventListener('click', () => {
     pregame.remove()
     intervalPause
     game.pause()
@@ -27,6 +27,7 @@ const intervalPause = setInterval( () => {
         if (e.key === "Escape") {
             mPause.style.display = 'flex'
             reset.addEventListener('click', () => {
+                window.location.reload()
             })
         }
         window.addEventListener('keydown', (e) => {
