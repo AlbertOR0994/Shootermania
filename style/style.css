@@ -6,7 +6,7 @@
     position: relative;
     top: 50px;
     background-size:contain;
-    background-color: red;
+    background-image: url('/assets/background/image.jpg');
 }
 /* Estadisticas generales de la partida */
 #status {
@@ -28,14 +28,11 @@
 /* Zona de juego  */
 #game {
     display:flex;
-    background-color: green;
     width: 90em;
     height: 15em;
     margin: 0 auto;
     position: relative;
     top: 500px;
-    
-
 }
 /* Web en negro para no sangrar los ojos :) */
 html{
@@ -58,10 +55,14 @@ html{
 }
 /* botones */
 .btn{
-    padding: 20px 30px 20px 30px;
+    /* padding: 20px 30px 20px 30px; */
+    box-sizing: border-box;
+    width: 140px;
+    height: 80px;
     background: radial-gradient(blue, black);
     color: white;
     margin-top: 20px;
+    font-size: 20px;
     font-weight: 800;
     font-family: Arial, Helvetica, sans-serif;
     filter: drop-shadow(10px 10px 4px black);
@@ -104,21 +105,21 @@ html{
 
 #close-tutorial{
     position: absolute;
-    right: 10px;
+    right: 265px;
     margin-top: 0;
 }
 #sam {
-    width: 50px;
-    height: 50px;
-    background-color: blue;
     position: absolute;
-    
+    background-image: url('../assets/background/Sam.png');
+    background-size: cover;
   }
 
 .enemy{
     border: solid 1px red;
     position:absolute;
     background-color: purple;
+    background-image: url('../assets/background/Enemy.png');
+    background-size: cover;
 }
 .bullet{
     background-color: yellow ;

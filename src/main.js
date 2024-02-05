@@ -25,9 +25,11 @@ const started = start.addEventListener('click', () => {
         switch(e.key){
           case 'a':
             player.directionX = -1
+            player.sprite.style.transform = "rotateY(180deg)"
             break
           case 'd':
             player.directionX = 1
+            player.sprite.style.transform = "rotateY(360deg)"
             break
         case 'w':
             player.directionY = -1
@@ -35,7 +37,7 @@ const started = start.addEventListener('click', () => {
         case 's':
             player.directionY = 1
             break
-            case "":
+            case " ":
                 let bullet = new Bullets(player.x + 70 , player.y +15  ,1, game , enemies,player, bullets)
                 bullet.insertBullet()
                 bullets.push(bullet)
@@ -54,25 +56,26 @@ const started = start.addEventListener('click', () => {
       
 
       function createEnemyLeft(){
-        const rngY = Math.floor(Math.random() * 170 )
-        let enemy = new Enemy(-60,rngY,1,1,game,player,enemies)
+        const rngY = Math.floor(Math.random() * 180 )
+        let enemy = new Enemy(-60,rngY,1,1,game,player,enemies,0)
         enemy.insertEnemy()
-        enemy.timerEnemy = setInterval(enemy.moveX,24)
+        enemy.sprite.style.transform = "rotateY(180deg)"
+        enemy.timerEnemy = setInterval(enemy.moveX, 21)
         enemies.push(enemy)     
     }
 
     function createEnemyRight(){
-        const rngY = Math.floor(Math.random() * 170 )
-        let enemy = new Enemy(1400,rngY,-1,1,game,player,enemies)
+        const rngY = Math.floor(Math.random() * 180 )
+        let enemy = new Enemy(1400,rngY,-1,1,game,player,enemies,180)
         enemy.insertEnemy()
-        enemy.timerEnemy = setInterval(enemy.moveX,24)
+        enemy.timerEnemy = setInterval(enemy.moveX,10)
         enemies.push(enemy)     
     }
 
       let timerEn = setInterval(() => {
         createEnemyLeft()
         createEnemyRight()
-      }, 4000)
+      }, 3000)
 
     function playerMovement(){
     
