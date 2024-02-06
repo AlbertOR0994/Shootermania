@@ -10,8 +10,7 @@
 }
 /* Estadisticas generales de la partida */
 #status {
-    background-color: yellow;
-    border: solid 1px black;
+    
     width: 80em;
     margin: 0 auto;
     height: 2.5em;
@@ -19,12 +18,54 @@
 }
 /* Cada estadistica */
 .stats {
-    background-color: aqua;
-    border: solid 1px black;
-    height: 40px;
+    
+   
+    height: 55px;
     width: 200px;
     margin: 0 auto;
+    font-weight: 800;
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 20px 20px 10px 10px;
+    filter: drop-shadow(10px 10px 4px black);
+    display: grid;
+    align-items: center;
+    text-align: center;
+
 }
+
+/* Stats Banners */
+
+#health {
+
+    background-image: url('/assets/background/rojo.png');
+    background-size: cover;
+
+}
+
+#score {
+
+    background-image: url('/assets/background/amarillo.png');
+    background-size: cover;
+
+}
+
+#bullets {
+
+    background-image: url('/assets/background/azul.png');
+    background-size: cover;
+
+}
+
+
+
+/*imagenes stats*/
+/* #heart{
+
+    z-index: 4;
+    
+} */
+
 /* Zona de juego  */
 #game {
     display:flex;
@@ -115,9 +156,7 @@ html{
   }
 
 .enemy{
-    border: solid 1px red;
     position:absolute;
-    background-color: purple;
     background-image: url('../assets/background/Enemy.png');
     background-size: cover;
 }
