@@ -32,6 +32,8 @@ class Main {
     const start = document.getElementById('start')
     const pregame = document.getElementById('pre-game')
     const game = document.getElementById('game')
+   
+
 
     start.addEventListener('click', () => {
       pregame.remove()
@@ -59,6 +61,7 @@ class Main {
         }
       })
       window.addEventListener('keyup', (e) => {
+        
           if (e.key === ' ') {
             let bullet = new Bullets(this.player.x + 20, this.player.y + 50, 1, game, this.enemies, this.player, this.bullets)
             if (this.player.directionX == 1) {
@@ -66,6 +69,8 @@ class Main {
               bullet.insertBullet()
               this.bullets.push(this.bullets)
               bullet.timerBullet = setInterval(bullet.move, 30)
+              
+
             }
             else {
               bullet.direction = -1
@@ -94,8 +99,10 @@ class Main {
   createEnemyLeft() {
     const game = document.getElementById('game')
     const rngY = Math.floor(Math.random() * 180)
-    let enemy = new Enemy(-60, rngY, 1, 1, game, this.player, this.enemies,180)
+    
+    let enemy = new Enemy(-60, rngY, 1, 1, game, this.player, this.enemies)
     enemy.insertEnemy()
+    enemy.sprite.style.transform = 'rotateY(180deg)'
     this.enemies.push(enemy)
     enemy.timerEnemy = setInterval(enemy.moveX, 8)
   }
@@ -103,7 +110,7 @@ class Main {
   createEnemyRight() {
     const game = document.getElementById('game')
     const rngY = Math.floor(Math.random() * 180)
-    let enemy = new Enemy(1400, rngY, -1, 1, game, this.player, this.enemies, 180)
+    let enemy = new Enemy(1400, rngY, -1, 1, game, this.player, this.enemies )
     enemy.insertEnemy()
     this.enemies.push(enemy)
     enemy.timerEnemy = setInterval(enemy.moveX, 8)
@@ -121,3 +128,4 @@ const game = new Main(main)
 
 game.insertGame()
 game.start()
+

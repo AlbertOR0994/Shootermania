@@ -24,9 +24,13 @@ class Bullets {
         newbullet.style.height = this.height + 'px'
         this.parent.appendChild(newbullet)
         this.sprite = newbullet
+        const bala = new Audio('src/Sounds/pew-pew-disparo.mp3')
+        bala.preload = "auto"
+        bala.play()
     }
 
     move() {
+        
         this.x += this.speed * this.direction
         this.sprite.style.left = this.x + 'px'
         this.checkCollision()

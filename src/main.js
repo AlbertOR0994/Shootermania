@@ -69,7 +69,7 @@ const started = start.addEventListener('click', () => {
     const rngY = Math.floor(Math.random() * 180)
     let enemy = new Enemy(-60, rngY, 1, 1, game, player, enemies, 0)
     enemy.insertEnemy()
-    /*  enemy.sprite.style.transform = "rotateY(180deg)" */
+    enemy.sprite.style.transform = "rotateY(180deg)"
     enemies.push(enemy)
     enemy.timerEnemy = setInterval(enemy.moveX, 8)
   }
