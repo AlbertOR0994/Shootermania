@@ -33,6 +33,8 @@ background-color: green;
     margin: 0 auto;
     position: relative;
     top: 500px;
+    overflow: hidden;
+
 }
 /* Web en negro para no sangrar los ojos :) */
 html{
@@ -112,12 +114,11 @@ html{
     
   }
 
-  #enemy{
-    background-color: red;
-    width: 50px;
-    height: 50px;
-  }
-
+.enemy{
+    border: solid 1px red;
+    position:absolute;
+    background-color: yellow;
+}
 
 #pause{
     margin: 0 auto;
