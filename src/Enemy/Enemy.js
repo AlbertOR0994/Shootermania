@@ -1,5 +1,5 @@
 class Enemy {
-    constructor (x, y, directionX, health,parent,sam, enemies, rotation){
+    constructor(x, y, directionX, health, parent, sam, enemies, rotation) {
         this.x = x
         this.y = y
         this.health = health
@@ -14,11 +14,12 @@ class Enemy {
         this.timerEnemy
         this.enemies = enemies
         this.rotation = rotation
+
         this.moveX = this.moveX.bind(this)
-        
+
     }
 
-    insertEnemy(){
+    insertEnemy() {
         const newEnemy = document.createElement('div')
         newEnemy.classList.add('enemy')
         newEnemy.style.left = this.x + 'px'
@@ -28,36 +29,40 @@ class Enemy {
         this.parent.appendChild(newEnemy)
         this.sprite = newEnemy
     }
-    moveX(){
-            this.x += this.speed * this.directionX
-            if(this.x >= -60 && this.x <= 1500 ){
+    moveX() {
+        this.x += this.speed * this.directionX
+        if (this.x >= -60 && this.x <= 1500) {
             this.sprite.style.left = this.x + 'px'
             this.sprite.style.rotate = 'y ' + this.rotation + 'px'
             this.checkCollision()
-            }
-            else{
-                this.removeEnemy()
-            }
-    }
-
-    removeEnemy(){
-        this.parent.removeChild(this.sprite)
-        clearInterval(this.timerEnemy)
-        this.enemies.splice(this.enemies.indexOf(this.sprite), 1)
-    }
-
-    checkCollision(){
-        if(this.x < (this.sam.x + this.sam.width) && 
-        (this.x + this.width)> this.sam.x &&
-        this.y < (this.sam.y + this.sam.height) && 
-        (this.y + this.height) > this.sam.y){
-            this.sam.health -= 1
-            this.removeEnemy()  
+        }
+        else {
+            this.removeEnemy()
         }
     }
 
+    removeEnemy() {
+        this.parent.removeChild(this.sprite)
+        const index = this.enemies.indexOf(this);
+        if (index !== -1) {
+            this.enemies.splice(index, 1);
+        }
+
+        clearInterval(this.timerEnemy)
+    }
+    enemies
+    checkCollision() {
+
+        if (this.x < (this.sam.x + this.sam.width) &&
+            (this.x + this.width) > this.sam.x &&
+            this.y < (this.sam.y + this.sam.height) &&
+            (this.y + this.height) > this.sam.y) {
+            this.sam.health -= 1
+            this.removeEnemy()
+        }
+    }
     // Disparar a un enemigo
-    shootSam(){
+    shootSam() {
 
     }
 }

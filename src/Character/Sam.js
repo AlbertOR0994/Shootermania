@@ -1,10 +1,10 @@
 class Sam {
-    constructor (x, y, parent, health, bullets){
+    constructor (x, y, parent, health, bullet){
         this.x = x
         this.y = y
         this.health = health
         this.speed = 5
-        this.bullets = bullets
+        this.bullet = bullet
         this.timerId = null
         this.sprite
         this.parent = parent
@@ -45,13 +45,14 @@ class Sam {
     }
 
     checkStatus(){
+      const lifes = document.getElementById('health')
+      lifes.innerText = `${this.health} LIFES`
       if(this.health <= 0){
-        console.log(this.health)
         this.isDead = true
       }
       if(this.isDead === true){
         // PANTALLA DE MUERTE 
-        window.location.reload()
+       /*  window.location.reload() */
       }
     }
     // Disparar a un enemigo
