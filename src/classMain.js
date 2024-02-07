@@ -116,6 +116,17 @@ class Main {
         
       }, 24)
     })
+
+    tutorial.addEventListener('click', () => {
+      pTutorial.style.display = 'block'
+
+    })
+
+    closeTuto.addEventListener('click', () => {
+      pTutorial.style.display = 'none'
+    })
+
+
   }
 
   

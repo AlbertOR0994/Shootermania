@@ -49,12 +49,14 @@ class Enemy {
 
         clearInterval(this.timerEnemy)
     }
+    
     checkCollision() {
-
+        
         if (this.x < (this.sam.x + this.sam.width) &&
             (this.x + this.width) > this.sam.x &&
             this.y < (this.sam.y + this.sam.height) &&
             (this.y + this.height) > this.sam.y) {
+     
             this.sam.health -= 1
             this.removeEnemy(1)
             const samHitted = new Audio('src/Sounds/terraria-male-player-hurt-sound.mp3')

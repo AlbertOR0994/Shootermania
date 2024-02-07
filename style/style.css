@@ -165,13 +165,19 @@ html{
 }
 /* Pendiente añadir imagen de controles para jugar en HTML*/
 #tutorial-image img{
-   width: 60%;
+    width: 51%;
+    padding: 85px;
+    filter: drop-shadow(10px 10px 4px black);
+    
 }
+
 
 #close-tutorial{
     position: absolute;
-    right: 265px;
-    margin-top: 0;
+    right: 400px;
+    margin-top: 75px;
+    width: 93px;
+    
 }
 #sam {
     position: absolute;

@@ -21,6 +21,7 @@ class Boss extends Enemy {
     }
 
     moveX() {
+
         this.x += this.speed * this.directionX
         if(this.health >=0){
             this.health += -1
@@ -33,5 +34,8 @@ class Boss extends Enemy {
             }
         }
     }
+
+
+
 }
 
