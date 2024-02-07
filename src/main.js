@@ -95,22 +95,7 @@ closeTuto.addEventListener('click', () => {
   pTutorial.style.display = 'none'
 })
 
-const intervalPause = setInterval(() => {
-  window.addEventListener('keydown', (e) => {
-    if (e.key === "Escape") {
-      mPause.style.display = 'flex'
-      reset.addEventListener('click', () => {
-        window.location.reload()
-      })
-    }
-    window.addEventListener('keydown', (e) => {
-      if (e.key === "Escape") {
-        mPause.style.display = 'none'
 
-      }
-    })
-  })
-}, 1000)
 
 
 

@@ -32,10 +32,30 @@ class Main {
     const start = document.getElementById('start')
     const pregame = document.getElementById('pre-game')
     const game = document.getElementById('game')
-   
+    
+    const intervalPause = setInterval(() => {
+      window.addEventListener('keydown', (e) => {
+        if (e.key === "Escape") {
+          mPause.style.display = 'flex'
+          reset.addEventListener('click', () => {
+            window.location.reload()
+          })
+        }
+        window.addEventListener('keydown', (e) => {
+          if (e.key === "Escape") {
+            mPause.style.display = 'none'
+            
+          }
+        })
+      })
+    }, 1000)
 
 
     start.addEventListener('click', () => {
+      const gameMusic = new Audio('src/Sounds/2019-12-11_-_Retro_Platforming_-_David_Fesliyan.mp3')
+      gameMusic.volume = 0.2
+      gameMusic.play()
+      gameMusic.loop = true
       pregame.remove()
 
       this.player = new Sam(690, 100, game, 3, 25)
@@ -68,7 +88,7 @@ class Main {
               bullet.direction = 1
               bullet.insertBullet()
               this.bullets.push(this.bullets)
-              bullet.timerBullet = setInterval(bullet.move, 30)
+              bullet.timerBullet = setInterval(bullet.move, 10)
               
 
             }
@@ -76,7 +96,7 @@ class Main {
               bullet.direction = -1
               bullet.insertBullet()
               this.bullets.push(this.bullets)
-              bullet.timerBullet = setInterval(bullet.move, 30)
+              bullet.timerBullet = setInterval(bullet.move, 10)
             }
           }
         })
@@ -92,7 +112,7 @@ class Main {
         this.player.checkStatus()
         this.player.moveX()
         this.player.moveY()
-
+        
       }, 24)
     })
   }
@@ -100,7 +120,7 @@ class Main {
     const game = document.getElementById('game')
     const rngY = Math.floor(Math.random() * 180)
     
-    let enemy = new Enemy(-60, rngY, 1, 1, game, this.player, this.enemies)
+    const enemy = new Enemy(-60, rngY, 1, 1, game, this.player, this.enemies)
     enemy.insertEnemy()
     enemy.sprite.style.transform = 'rotateY(180deg)'
     this.enemies.push(enemy)
@@ -110,7 +130,7 @@ class Main {
   createEnemyRight() {
     const game = document.getElementById('game')
     const rngY = Math.floor(Math.random() * 180)
-    let enemy = new Enemy(1400, rngY, -1, 1, game, this.player, this.enemies )
+    const enemy = new Enemy(1400, rngY, -1, 1, game, this.player, this.enemies )
     enemy.insertEnemy()
     this.enemies.push(enemy)
     enemy.timerEnemy = setInterval(enemy.moveX, 8)

@@ -8,8 +8,8 @@ class Bullets {
         this.sam = sam
         this.bullets = bullets
         this.speed = 12
-        this.width = 5
-        this.height = 5
+        this.width = 8
+        this.height = 8
         this.sprite
         this.timerBullet
         this.move = this.move.bind(this)
@@ -25,6 +25,7 @@ class Bullets {
         this.parent.appendChild(newbullet)
         this.sprite = newbullet
         const bala = new Audio('src/Sounds/pew-pew-disparo.mp3')
+        bala.volume = 0.4
         bala.preload = "auto"
         bala.play()
     }
@@ -55,7 +56,8 @@ class Bullets {
                 (this.x + this.width) > enemy.x &&
                 this.y < (enemy.y + enemy.height) &&
                 (this.y + this.height) > enemy.y) {
-    
+                const enemyHurt = new Audio('src/Sounds/classic_hurt.mp3')
+                enemyHurt.play()
                 enemy.removeEnemy();
                 this.removeBullet();
                 break;

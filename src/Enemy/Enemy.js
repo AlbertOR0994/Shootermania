@@ -43,7 +43,6 @@ class Enemy {
 
         this.parent.removeChild(this.sprite)
         const index = this.enemies.indexOf(this);
-        console.log(this.health)
         if (index !== -1) {
             this.enemies.splice(index, 1);
         }
@@ -57,7 +56,10 @@ class Enemy {
             this.y < (this.sam.y + this.sam.height) &&
             (this.y + this.height) > this.sam.y) {
             this.sam.health -= 1
-            this.removeEnemy()
+            this.removeEnemy(1)
+            const samHitted = new Audio('src/Sounds/terraria-male-player-hurt-sound.mp3')
+            samHitted.volume = 1
+            samHitted.play()
         }
     }
     // Disparar a un enemigo
