@@ -9,6 +9,7 @@ class Boss extends Enemy {
     }
 
     insertBoss() {
+        console.log(this.parent)
         const newDiv = document.createElement('div')
         newDiv.setAttribute('id', 'boss')
         newDiv.style.width = this.width + 'px'
@@ -16,6 +17,7 @@ class Boss extends Enemy {
         newDiv.style.left = this.x + 'px'
         newDiv.style.top = this.y + 'px'
         this.parent.appendChild(newDiv)
+        this.sprite = newDiv
     }
 }
 

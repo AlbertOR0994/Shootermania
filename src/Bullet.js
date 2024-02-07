@@ -65,6 +65,8 @@ class Bullets {
                 enemy.removeEnemy();
                 this.getScore()
                 this.removeBullet();
+
+                
                 
             }
         }

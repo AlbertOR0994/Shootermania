@@ -8,6 +8,7 @@ class Main {
     this.player 
     this.bullets = []
     this.insertGame = this.insertGame.bind(this)
+    this.counter = 0
   }
 
 
@@ -92,10 +93,14 @@ class Main {
         this.player.checkStatus()
         this.player.moveX()
         this.player.moveY()
-        this.conditionalEnd()
+        
+        
       }, 24)
     })
   }
+
+  
+
   createEnemyLeft() {
     const game = document.getElementById('game')
     const rngY = Math.floor(Math.random() * 180)
@@ -106,7 +111,11 @@ class Main {
     this.enemies.push(enemy)
     enemy.timerEnemy = setInterval(() => {
       enemy.moveX()
-      boss.moveX()    
+      
+     
+      
+
+         
 } ,8)
      
       
@@ -122,18 +131,26 @@ class Main {
     this.enemies.push(enemy)
     enemy.timerEnemy = setInterval(enemy.moveX, 8)
     
+    
   }
   intervalSpawn(){
     setInterval( () => {
       this.createEnemyRight()
       this.createEnemyLeft()
+      this.conditionalEnd()
     }, 3000)
   } 
 
   conditionalEnd() {
-    if (this.player.score >= 500 ){
-      let boss = new Boss(this.player, game, enemy.enemies)
-      boss.insertBoss()    
+    const game = document.getElementById('game')
+    if (this.counter <=0 && this.player.score >= 500 ){
+      let boss = new Boss(this.player, game, this.enemies)
+      boss.insertBoss() 
+      boss.timerEnemy = setInterval(() => {
+        boss.moveX()
+
+      }, 8)
+      this.counter++   
     }
   }
 }
