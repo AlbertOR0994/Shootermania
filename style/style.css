@@ -1,5 +1,5 @@
-.main {
-      border: solid 1px black;
+#main {
+    border: solid 1px black;
     width: 90em;
     height: 50em;
     margin: 0 auto;
@@ -7,11 +7,26 @@
     top: 50px;
     background-size:contain;
     background-image: url('/assets/background/image.jpg');
-}
+    animation: test 3s;
+    animation-iteration-count: infinite;
+    }
+
+    @keyframes test {
+        0%{
+           top: 5px;
+        }  
+        50%{
+           top: 0px;
+        }
+        100%{
+           top: 5px;
+       
+        }
+      }
+
 /* Estadisticas generales de la partida */
 #status {
-    background-color: yellow;
-    border: solid 1px black;
+    
     width: 80em;
     margin: 0 auto;
     height: 2.5em;
@@ -19,20 +34,65 @@
 }
 /* Cada estadistica */
 .stats {
-    background-color: aqua;
-    border: solid 1px black;
-    height: 40px;
+    
+   
+    height: 55px;
     width: 200px;
     margin: 0 auto;
+    font-weight: 800;
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 20px 20px 10px 10px;
+    filter: drop-shadow(10px 10px 4px black);
+    display: grid;
+    align-items: center;
+    text-align: center;
+
 }
+
+/* Stats Banners */
+
+#health {
+
+    background-image: url('/assets/background/rojo.png');
+    background-size: cover;
+
+}
+
+#score {
+
+    background-image: url('/assets/background/amarillo.png');
+    background-size: cover;
+
+}
+
+#bullets {
+
+    background-image: url('/assets/background/azul.png');
+    background-size: cover;
+
+}
+
+
+
+/*imagenes stats*/
+/* #heart{
+
+    z-index: 4;
+    
+} */
+
 /* Zona de juego  */
 #game {
     display:flex;
-    width: 90em;
-    height: 15em;
+    width: 100em;
+    height: 90em;
     margin: 0 auto;
     position: relative;
     top: 500px;
+    overflow:visible;
+    z-index: 1;
+    
 }
 /* Web en negro para no sangrar los ojos :) */
 html{
@@ -52,7 +112,9 @@ html{
     background-size:contain;
     background-image: url(./../assets/background/9SYf0EO.png);
     z-index: 5;
+    
 }
+
 /* botones */
 .btn{
     /* padding: 20px 30px 20px 30px; */
@@ -89,7 +151,10 @@ html{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     border-radius: 20px 20px 10px 10px;
     filter: drop-shadow(10px 10px 4px black);
+
 }
+
+
 
 #tutorial-image {
     position: absolute;
@@ -112,25 +177,32 @@ html{
     position: absolute;
     background-image: url('../assets/background/Sam.png');
     background-size: cover;
-  }
+    z-index: 2;
+   }
 
 .enemy{
-    border: solid 1px red;
     position:absolute;
-    background-color: purple;
     background-image: url('../assets/background/Enemy.png');
     background-size: cover;
 }
 .bullet{
-    background-color: yellow ;
+    background-size: cover;
     position: absolute;
-    border: solid 1px white;
+    z-index: 1;
+    background: linear-gradient(0.25turn,yellow,red);
+    border-radius: 15px;
+    padding-left: 15px;
+
+
 }
 
 #pause{
     margin: 0 auto;
-    display:none;
+    position: absolute;
+    display: flex;
     justify-content: center;
+    top: 20em;
+    left: 35em;
     background-color: rgba(128, 128, 128, 0.524);
     padding: 30px 40px 30px 40px;
     font-weight: 800;
@@ -139,6 +211,13 @@ html{
     border-radius: 20px 20px 10px 10px;
     filter: drop-shadow(10px 10px 4px black);
     width: 200px;
+}
+
+#boss{
+    
+    background-image: url('../assets/background/Boss.png');
+    background-size: cover;
+    position: absolute;
 }
 
 /* Ronboide para la calle - Bonus */

@@ -6,29 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/style.css">
     <script src="./src/Bullet.js" defer></script>
-    <script src="./src/Enemy/Enemy.js"></script>
+    <script src="./src/Enemy/Enemy.js" defer></script>
     <script src="./src/Character/Sam.js" defer></script>
-    <script src="./src/main.js" defer></script>
-
+    <script src="./src/Enemy/Boss.js" defer></script>
+    <script src="./src/classMain.js" defer></script>
     <title>ShooterMania</title>
+   
 </head>
 
 <body>
-    <div class="main">
+    
+    <div id="main">
         <div id="tutorial-image"><img src="/assets/background/prueba.jpg" alt=""> 
             <button class="btn" id="close-tutorial"> X</button></div>
         <div id="pre-game">
+            <audio src="src/Sounds/2021-08-16_-_8_Bit_Adventure_-_www.FesliyanStudios.com.mp3" preload="auto" autoplay loop></audio>
             <div id="menu"> Menu
                 <button class="btn" id="start"> Starts</button>
                 <button class="btn" id="tutorial"> Tutorial</button>
             </div>
         </div>
         <div id="status">
+            
             <div class="stats" id="health">HEALTH</div>
             <div class="stats" id="score">SCORE</div>
             <div class="stats" id="bullets">BULLETS</div>
         </div>
-        <div id="game">GAME</div>
+        <!-- <div id="game">GAME</div> -->
         <div id="pause">
             <button class="btn" id="reset">Restart</button>
         </div>
