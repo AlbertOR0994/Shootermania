@@ -41,6 +41,13 @@ class Bullets {
 
     }
 
+    getScore () {
+        this.sam.score += 100
+        const score = document.getElementById('score')
+        score.innerText = `${this.sam.score} Score`
+
+    }
+
     removeBullet() {
         this.parent.removeChild(this.sprite)
         clearInterval(this.timerBullet)
@@ -59,8 +66,12 @@ class Bullets {
                 const enemyHurt = new Audio('src/Sounds/classic_hurt.mp3')
                 enemyHurt.play()
                 enemy.removeEnemy();
+        
+                this.getScore()
                 this.removeBullet();
-                break;
+
+                
+                
             }
         }
     }

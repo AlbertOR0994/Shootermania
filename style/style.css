@@ -1,5 +1,5 @@
 #main {
-      border: solid 1px black;
+    border: solid 1px black;
     width: 90em;
     height: 50em;
     margin: 0 auto;
@@ -90,7 +90,9 @@
     margin: 0 auto;
     position: relative;
     top: 500px;
-    overflow:visible
+    overflow:visible;
+    z-index: 1;
+    
 }
 /* Web en negro para no sangrar los ojos :) */
 html{

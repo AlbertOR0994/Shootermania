@@ -8,6 +8,7 @@ class Main {
     this.player 
     this.bullets = []
     this.insertGame = this.insertGame.bind(this)
+    this.counter = 0
   }
 
 
@@ -116,32 +117,64 @@ class Main {
       }, 24)
     })
   }
+
+  
+
   createEnemyLeft() {
     const game = document.getElementById('game')
     const rngY = Math.floor(Math.random() * 180)
-    
-    const enemy = new Enemy(-60, rngY, 1, 1, game, this.player, this.enemies)
+    let enemy = new Enemy(-5, rngY, 1, 1, game, this.player, this.enemies)
     enemy.insertEnemy()
     enemy.sprite.style.transform = 'rotateY(180deg)'
     this.enemies.push(enemy)
-    enemy.timerEnemy = setInterval(enemy.moveX, 8)
+    enemy.timerEnemy = setInterval(() => {
+      enemy.moveX()
+      
+     
+      
+
+         
+} ,8)
+     
+      
+   
+    
   }
 
   createEnemyRight() {
     const game = document.getElementById('game')
     const rngY = Math.floor(Math.random() * 180)
-    const enemy = new Enemy(1400, rngY, -1, 1, game, this.player, this.enemies )
+    let enemy = new Enemy(1380, rngY, -1, 1, game, this.player, this.enemies )
     enemy.insertEnemy()
     this.enemies.push(enemy)
     enemy.timerEnemy = setInterval(enemy.moveX, 8)
+    
+    
   }
   intervalSpawn(){
     setInterval( () => {
       this.createEnemyRight()
       this.createEnemyLeft()
+      this.conditionalEnd()
     }, 3000)
+  } 
+
+  conditionalEnd() {
+    const game = document.getElementById('game')
+    if (this.counter <=0 && this.player.score >= 500 ){
+      let boss = new Boss(this.player, game, this.enemies)
+      boss.insertBoss() 
+      this.enemies.push(boss)
+      boss.timerEnemy = setInterval(() => {
+        boss.moveX()
+
+      }, 8)
+      this.counter++   
+    }
   }
 }
+
+
 
 const main = document.getElementById('main')
 const game = new Main(main)
