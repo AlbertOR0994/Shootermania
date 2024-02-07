@@ -31,7 +31,7 @@ class Bullets {
     }
 
     move() {
-        
+
         this.x += this.speed * this.direction
         this.sprite.style.left = this.x + 'px'
         this.checkCollision()
@@ -41,7 +41,7 @@ class Bullets {
 
     }
 
-    getScore () {
+    getScore() {
         this.sam.score += 100
         const score = document.getElementById('score')
         score.innerText = `${this.sam.score} Score`
@@ -65,14 +65,25 @@ class Bullets {
                 (this.y + this.height) > enemy.y) {
                 const enemyHurt = new Audio('src/Sounds/classic_hurt.mp3')
                 enemyHurt.play()
-                enemy.removeEnemy();
-        
                 this.getScore()
                 this.removeBullet();
-
-                
-                
+                enemy.removeEnemy();
+                this.samWin()
             }
+        }
+    }
+    samWin() {
+        const enemigo = [...this.enemies]
+        const main = document.getElementById('main')
+        if (this.sam.score == 100) {
+            console.log(this.sam.score)
+            const divwin = document.createElement('div')
+            divwin.setAttribute('id', 'win')
+            divwin.innerHTML = "<div id='iwin'>Victory!</div>"
+            main.appendChild(divwin)
+            clearInterval(this.timerId)
+            main.removeChild(this.parent)
+            this.sam
         }
     }
 }  

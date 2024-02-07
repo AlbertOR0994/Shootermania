@@ -38,7 +38,7 @@ class Sam {
     // Movimiento vertical
     moveY(){
         let nextY = this.y + this.speed * this.directionY
-        if(nextY >= -45 && nextY <= 170){
+        if(nextY >= -45 && nextY <= 800){
           this.y += this.speed * this.directionY
           this.sprite.style.top = this.y + 'px'
         } 
@@ -47,19 +47,16 @@ class Sam {
 
     checkStatus(){
       const lifes = document.getElementById('health')
+      const main = document.getElementById('main')
       lifes.innerText = `${this.health} LIFES`
       if(this.health <= 0){
         this.isDead = true
       }
-      if(this.isDead === true){
-        // PANTALLA DE MUERTE 
-       /*  window.location.reload() */
-      }
     }
     // Disparar a un enemigo
     shootEnemy(){
-      
       const shoot = document.createElement('div')
       shoot.setAttribute('class','shoot')
     }
+
 }
