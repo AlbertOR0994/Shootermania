@@ -63,6 +63,7 @@ class Bullets {
                 this.y < (enemy.y + enemy.height) &&
                 (this.y + this.height) > enemy.y) {
                 enemy.removeEnemy();
+        
                 this.getScore()
                 this.removeBullet();
 

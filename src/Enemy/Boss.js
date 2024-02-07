@@ -19,5 +19,7 @@ class Boss extends Enemy {
         this.parent.appendChild(newDiv)
         this.sprite = newDiv
     }
+
+
 }
 

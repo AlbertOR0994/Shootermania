@@ -146,6 +146,7 @@ class Main {
     if (this.counter <=0 && this.player.score >= 500 ){
       let boss = new Boss(this.player, game, this.enemies)
       boss.insertBoss() 
+      this.enemies.push(boss)
       boss.timerEnemy = setInterval(() => {
         boss.moveX()
 
@@ -154,6 +155,7 @@ class Main {
     }
   }
 }
+
 
 
 const main = document.getElementById('main')
