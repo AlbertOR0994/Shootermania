@@ -181,8 +181,10 @@ html{
 }
 
 #boss{
-    background-color: green;
-    background-image: url('../assets/background/Boss.png');
+    
+    background-image: url('/assets/background/Boss.png');
+    position: absolute;
+    background-size: cover;
 }
 
 /* Ronboide para la calle - Bonus */

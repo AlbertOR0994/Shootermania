@@ -13,6 +13,7 @@ class Sam {
         this.width = 75
         this.height = 75
         this.isDead = false
+        this.score = 0
     }
 
     insertSam(){
@@ -33,15 +34,16 @@ class Sam {
           this.x += this.speed * this.directionX
           this.sprite.style.left = this.x + 'px'
         }
-        this.isDead = false
+        
       }
     // Movimiento vertical
     moveY(){
         let nextY = this.y + this.speed * this.directionY
-        if(nextY >= -45 && nextY <= 190){
+        if(nextY >= -45 && nextY <= 170){
           this.y += this.speed * this.directionY
           this.sprite.style.top = this.y + 'px'
         } 
+       
     }
 
     checkStatus(){

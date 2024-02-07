@@ -92,7 +92,7 @@ class Main {
         this.player.checkStatus()
         this.player.moveX()
         this.player.moveY()
-
+        this.conditionalEnd()
       }, 24)
     })
   }
@@ -104,7 +104,14 @@ class Main {
     enemy.insertEnemy()
     enemy.sprite.style.transform = 'rotateY(180deg)'
     this.enemies.push(enemy)
-    enemy.timerEnemy = setInterval(enemy.moveX, 8)
+    enemy.timerEnemy = setInterval(() => {
+      enemy.moveX()
+      boss.moveX()    
+} ,8)
+     
+      
+   
+    
   }
 
   createEnemyRight() {
@@ -114,14 +121,23 @@ class Main {
     enemy.insertEnemy()
     this.enemies.push(enemy)
     enemy.timerEnemy = setInterval(enemy.moveX, 8)
+    
   }
   intervalSpawn(){
     setInterval( () => {
       this.createEnemyRight()
       this.createEnemyLeft()
     }, 3000)
+  } 
+
+  conditionalEnd() {
+    if (this.player.score >= 500 ){
+      let boss = new Boss(this.player, game, enemy.enemies)
+      boss.insertBoss()    
+    }
   }
 }
+
 
 const main = document.getElementById('main')
 const game = new Main(main)

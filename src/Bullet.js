@@ -40,6 +40,13 @@ class Bullets {
 
     }
 
+    getScore () {
+        this.sam.score += 100
+        const score = document.getElementById('score')
+        score.innerText = `${this.sam.score} Score`
+
+    }
+
     removeBullet() {
         this.parent.removeChild(this.sprite)
         clearInterval(this.timerBullet)
@@ -55,10 +62,10 @@ class Bullets {
                 (this.x + this.width) > enemy.x &&
                 this.y < (enemy.y + enemy.height) &&
                 (this.y + this.height) > enemy.y) {
-    
                 enemy.removeEnemy();
+                this.getScore()
                 this.removeBullet();
-                break;
+                
             }
         }
     }

@@ -4,6 +4,8 @@ class Boss extends Enemy {
         this.width = 100
         this.height = 100
         this.sprite
+        
+        
     }
 
     insertBoss() {
@@ -16,3 +18,4 @@ class Boss extends Enemy {
         this.parent.appendChild(newDiv)
     }
 }
+
