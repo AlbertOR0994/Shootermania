@@ -20,6 +20,15 @@ class Boss extends Enemy {
         this.sprite = newDiv
     }
 
-
+    moveX() {
+        this.x += this.speed * this.directionX
+        if (this.x >= 0 && this.x <= 1450) {
+            this.sprite.style.left = this.x + 'px'
+            this.checkCollision()
+        }
+        else {
+            this.directionX = -this.directionX
+        }
+    }
 }
 

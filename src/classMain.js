@@ -105,7 +105,7 @@ class Main {
     const game = document.getElementById('game')
     const rngY = Math.floor(Math.random() * 180)
     
-    let enemy = new Enemy(-60, rngY, 1, 1, game, this.player, this.enemies)
+    let enemy = new Enemy(-5, rngY, 1, 1, game, this.player, this.enemies)
     enemy.insertEnemy()
     enemy.sprite.style.transform = 'rotateY(180deg)'
     this.enemies.push(enemy)
@@ -126,7 +126,7 @@ class Main {
   createEnemyRight() {
     const game = document.getElementById('game')
     const rngY = Math.floor(Math.random() * 180)
-    let enemy = new Enemy(1400, rngY, -1, 1, game, this.player, this.enemies )
+    let enemy = new Enemy(1380, rngY, -1, 1, game, this.player, this.enemies )
     enemy.insertEnemy()
     this.enemies.push(enemy)
     enemy.timerEnemy = setInterval(enemy.moveX, 8)

@@ -1,5 +1,5 @@
 #main {
-      border: solid 1px black;
+    border: solid 1px black;
     width: 90em;
     height: 50em;
     margin: 0 auto;
@@ -7,6 +7,7 @@
     top: 50px;
     background-size:contain;
     background-image: url('/assets/background/image.jpg');
+  
 }
 /* Estadisticas generales de la partida */
 #status {
@@ -74,6 +75,8 @@
     margin: 0 auto;
     position: relative;
     top: 500px;
+    z-index: 1;
+    
 }
 /* Web en negro para no sangrar los ojos :) */
 html{
@@ -153,6 +156,7 @@ html{
     position: absolute;
     background-image: url('../assets/background/Sam.png');
     background-size: cover;
+    z-index: 2;
   }
 
 .enemy{

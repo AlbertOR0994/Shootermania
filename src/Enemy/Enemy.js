@@ -30,7 +30,7 @@ class Enemy {
     }
     moveX() {
         this.x += this.speed * this.directionX
-        if (this.x >= -60 && this.x <= 1500) {
+        if (this.x >= -10  && this.x <= 1390) {
             this.sprite.style.left = this.x + 'px'
             this.checkCollision()
         }
