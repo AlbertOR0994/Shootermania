@@ -34,6 +34,7 @@ class Sam {
           this.x += this.speed * this.directionX
           this.sprite.style.left = this.x + 'px'
         }
+        
       }
     // Movimiento vertical
     moveY(){

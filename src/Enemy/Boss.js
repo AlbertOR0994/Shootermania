@@ -1,11 +1,12 @@
 class Boss extends Enemy {
     constructor(sam, parent, enemies) {
-        super(50, 50, 1, 10, parent, sam, enemies)
+        super(60, 60, 1, 10, parent, sam, enemies)
         this.width = 100
         this.height = 100
-        this.speed = 0.2
+        this.speed = 0.5
         this.health = 5
         this.sprite
+        this.isDead = false
     }
 
     insertBoss() {
@@ -22,8 +23,7 @@ class Boss extends Enemy {
 
     moveX() {
         this.x += this.speed * this.directionX
-        if(this.health >=0){
-            this.health += -1
+      
         if (this.x >= 0 && this.x <= 1450) {
             this.sprite.style.left = this.x + 'px'
             this.checkCollision()
@@ -31,7 +31,21 @@ class Boss extends Enemy {
             else {
                 this.directionX = -this.directionX
             }
+        if(this.directionX == -1 && this.x >=0){
+            this.sprite.style.transform = "rotateY(180deg)"
         }
+        if (this.directionX == 1 && this.x <=1450){
+            this.sprite.style.transform = "rotateY(360deg)"
+        }
+        
     }
+
+    checkStatus(){
+        if(this.health <= 0){
+          this.isDead = true
+        }
+    
+        
+      }
 }
 
