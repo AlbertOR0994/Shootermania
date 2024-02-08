@@ -65,10 +65,17 @@ class Bullets {
                 (this.y + this.height) > enemy.y) {
                 const enemyHurt = new Audio('src/Sounds/classic_hurt.mp3')
                 enemyHurt.play()
+
+                enemy.health -= 1
+                if (enemy.health <= 0) {
+                    enemy.isDead = true;
+                    enemy.removeEnemy();
+                }
                 this.getScore()
-                this.removeBullet();
-                enemy.removeEnemy();
+                this.removeBullet()
+                console.log(enemy.health)
+                return
             }
         }
     }
-}  
+}

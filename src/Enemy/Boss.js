@@ -1,13 +1,9 @@
 class Boss extends Enemy {
     constructor(sam, parent, enemies) {
-        super(60, 60, 1, 10, parent, sam, enemies)
+        super(60, 60, 1, 10, parent, sam, enemies, health)
         this.width = 100
         this.height = 100
-<<<<<<< HEAD
-        this.speed = 6
-=======
         this.speed = 0.5
->>>>>>> ramaShere
         this.health = 5
         this.sprite
         this.isDead = false
@@ -29,24 +25,15 @@ class Boss extends Enemy {
 
     moveX() {
         this.x += this.speed * this.directionX
-<<<<<<< HEAD
-=======
-      
->>>>>>> ramaShere
         if (this.x >= 0 && this.x <= 1450) {
             this.sprite.style.left = this.x + 'px'
             this.checkCollision()
         }
-<<<<<<< HEAD
-        else {
-            this.directionX = -this.directionX
-=======
             else {
                 this.directionX = -this.directionX
             }
         if(this.directionX == -1 && this.x >=0){
             this.sprite.style.transform = "rotateY(180deg)"
->>>>>>> ramaShere
         }
         if (this.directionX == 1 && this.x <=1450){
             this.sprite.style.transform = "rotateY(360deg)"
@@ -54,12 +41,33 @@ class Boss extends Enemy {
         
     }
 
+    checkCollision(){
+        if (this.x < (this.sam.x + this.sam.width) &&
+            (this.x + this.width) > this.sam.x &&
+            this.y < (this.sam.y + this.sam.height) &&
+            (this.y + this.height) > this.sam.y) 
+            {
+            this.sam.health -=1
+            this.checkStatus() 
+            return 
+         }
+    
+    }
+
     checkStatus(){
-        if(this.health <= 0){
-          this.isDead = true
+        if(this.health === 0){this.isDead = true}
+        if(this.isDead === true){ 
+            this.parent.removeChild(this.sprite)
+            const index = this.enemies.indexOf(this);
+        if (index !== -1) {
+            this.enemies.splice(index, 1);
         }
+        clearInterval(this.timerEnemy)
+
+          }
     
         
       }
+    
 }
 

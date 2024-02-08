@@ -39,7 +39,7 @@ class Sam {
     // Movimiento vertical
     moveY(){
         let nextY = this.y + this.speed * this.directionY
-        if(nextY >= -45 && nextY <= 800){
+        if(nextY >= -45 && nextY <= 170){
           this.y += this.speed * this.directionY
           this.sprite.style.top = this.y + 'px'
         } 

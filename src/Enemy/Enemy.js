@@ -2,8 +2,8 @@ class Enemy {
     constructor(x, y, directionX, health, parent, sam, enemies) {
         this.x = x
         this.y = y
-        this.health = health
-        this.speed = 3
+        this.health = 1
+        this.speed = 2
         this.parent = parent
         this.sam = sam
         this.timerId = null
@@ -13,6 +13,7 @@ class Enemy {
         this.height = 75
         this.timerEnemy
         this.enemies = enemies
+        this.isDead = false
 
         this.moveX = this.moveX.bind(this)
 

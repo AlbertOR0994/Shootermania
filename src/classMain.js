@@ -103,7 +103,7 @@ class Main {
         this.player.moveX()
         this.player.moveY()
         this.samWin()
-        if (this.player.health <= 0 || this.player.score >= 100) {
+        if (this.player.health <= 0 || this.player.score >= 1500 ) {
           this.gameOver()
         }
       }, 24)
@@ -113,7 +113,7 @@ class Main {
 
   samWin() {
     const main = document.getElementById('main')
-    if (this.player.score == 100) {
+    if (this.player.score == 1500) {
       const divwin = document.createElement('div')
       divwin.setAttribute('id', 'win')
       divwin.innerHTML = "<div id='iwin'>Victory!</div> <button id='wreset'>Restart</button>"
@@ -154,7 +154,7 @@ class Main {
 
   bossAppears() {
     const game = document.getElementById('game')
-    if (this.counter <= 0 && this.player.score >= 3000) {
+    if (this.counter <= 0 && this.player.score >= 500) {
       let boss = new Boss(this.player, game, this.enemies)
       boss.insertBoss()
       this.enemies.push(boss)
@@ -170,7 +170,7 @@ class Main {
       this.createEnemyRight()
       this.createEnemyLeft()
       this.bossAppears()
-    }, 1000)
+    }, 3000)
   }
   gameOver() {
     this.test = true
