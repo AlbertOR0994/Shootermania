@@ -3,7 +3,7 @@ class Boss extends Enemy {
         super(60, 60, 1, 10, parent, sam, enemies, health)
         this.width = 100
         this.height = 100
-        this.speed = 0.5
+        this.speed = 5
         this.health = 5
         this.sprite
         this.isDead = false
@@ -26,7 +26,7 @@ class Boss extends Enemy {
     moveX() {
 
         this.x += this.speed * this.directionX
-        if (this.x >= 0 && this.x <= 1450) {
+        if (this.x >= 0 && this.x <= 1350) {
             this.sprite.style.left = this.x + 'px'
             this.checkCollision()
         }
@@ -47,8 +47,19 @@ class Boss extends Enemy {
             (this.x + this.width) > this.sam.x &&
             this.y < (this.sam.y + this.sam.height) &&
             (this.y + this.height) > this.sam.y) {
-            this.sam.health -= 1
+            this.sam.health -= 3
             this.checkStatus()
+            const adefeat = new Audio('src/Sounds/zg-survival-defeat-sound.mp3')
+            adefeat.play()
+            const defeat = document.createElement('div')
+            defeat.setAttribute('id', 'defeat')
+            defeat.innerHTML = "<div id='dtext'>LOSER</div> <button id='end'>AGAIN?</button>"
+            this.parent.appendChild(defeat)
+            const rest = document.getElementById('end')
+            rest.addEventListener('click', () => {
+                window.location.reload()
+            })
+            this.sam.sprite.remove()
             return
         }
 

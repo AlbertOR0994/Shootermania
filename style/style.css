@@ -35,7 +35,6 @@
 
 /* Estadisticas generales de la partida */
 #status {
-
     width: 80em;
     margin: 0 auto;
     height: 2.5em;
@@ -116,7 +115,7 @@ html {
     align-items: center;
     border: solid 1px black;
     width: 90em;
-    height: 50em;
+    height: 60em;
     margin: 0 auto;
     position: absolute;
     background-size: contain;
@@ -158,15 +157,16 @@ html {
     align-items: center;
     background-image: url('../assets/menu/Dropped\ image.png');
     background-size: cover;
-    padding: 15px 25px 15px 25px;
-    width: 12em;
-    height: 8em;
+    width: 16.8em;
+    height: 10.5em;
     font-size: 58px;
+    margin-bottom: 1.5em;
     font-weight: 800;
     color: rgb(212, 255, 0);
     font-family: 'pixelify sans', sans-serif;
-    border-radius: 40px;
-    filter: drop-shadow(10px 10px 50px black);
+    border-top-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    filter: drop-shadow(50px 80px 1000px black);
 
 }
 
