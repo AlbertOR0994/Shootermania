@@ -39,7 +39,7 @@ class Enemy {
             this.removeEnemy()
         }
     }
-    
+
     removeEnemy() {
 
         this.parent.removeChild(this.sprite)
@@ -50,6 +50,7 @@ class Enemy {
 
         clearInterval(this.timerEnemy)
     }
+
     checkCollision() {
 
         if (this.x < (this.sam.x + this.sam.width) &&

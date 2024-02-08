@@ -16,7 +16,7 @@ class Main {
 
 
   insertGame() {
-    console.log(this.parent)
+
     let juego = document.createElement('div')
     juego.setAttribute('id', 'game')
     juego.style.width = this.width + 'em'
@@ -37,7 +37,7 @@ class Main {
 
 
     start.addEventListener('click', () => {
-      console.log(this.bullets)
+
       const gameMusic = new Audio('src/Sounds/2019-12-11_-_Retro_Platforming_-_David_Fesliyan.mp3')
       gameMusic.volume = 0.2
       gameMusic.play()
@@ -194,7 +194,7 @@ class Main {
     })
     this.enemies.forEach((e) => {
       clearInterval(e.timerEnemy)
-      console.log(e)
+
     })
     test.forEach((e) => {
       e.remove()

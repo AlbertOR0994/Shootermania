@@ -10,7 +10,7 @@ class Boss extends Enemy {
     }
 
     insertBoss() {
-        console.log(this.parent)
+
         const newDiv = document.createElement('div')
         newDiv.setAttribute('id', 'boss')
         newDiv.style.width = this.width + 'px'
@@ -24,50 +24,50 @@ class Boss extends Enemy {
     }
 
     moveX() {
+
         this.x += this.speed * this.directionX
         if (this.x >= 0 && this.x <= 1450) {
             this.sprite.style.left = this.x + 'px'
             this.checkCollision()
         }
-            else {
-                this.directionX = -this.directionX
-            }
-        if(this.directionX == -1 && this.x >=0){
+        else {
+            this.directionX = -this.directionX
+        }
+        if (this.directionX == -1 && this.x >= 0) {
             this.sprite.style.transform = "rotateY(180deg)"
         }
-        if (this.directionX == 1 && this.x <=1450){
+        if (this.directionX == 1 && this.x <= 1450) {
             this.sprite.style.transform = "rotateY(360deg)"
         }
-        
+
     }
 
-    checkCollision(){
+    checkCollision() {
         if (this.x < (this.sam.x + this.sam.width) &&
             (this.x + this.width) > this.sam.x &&
             this.y < (this.sam.y + this.sam.height) &&
-            (this.y + this.height) > this.sam.y) 
-            {
-            this.sam.health -=1
-            this.checkStatus() 
-            return 
-         }
-    
+            (this.y + this.height) > this.sam.y) {
+            this.sam.health -= 1
+            this.checkStatus()
+            return
+        }
+
     }
 
-    checkStatus(){
-        if(this.health === 0){this.isDead = true}
-        if(this.isDead === true){ 
+    checkStatus() {
+        if (this.health === 0) { this.isDead = true }
+        if (this.isDead === true) {
             this.parent.removeChild(this.sprite)
             const index = this.enemies.indexOf(this);
-        if (index !== -1) {
-            this.enemies.splice(index, 1);
-        }
-        clearInterval(this.timerEnemy)
+            if (index !== -1) {
+                this.enemies.splice(index, 1);
+            }
+            clearInterval(this.timerEnemy)
 
-          }
-    
-        
-      }
-    
+        }
+
+
+    }
+
 }
 

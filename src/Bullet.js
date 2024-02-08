@@ -31,7 +31,6 @@ class Bullets {
     }
 
     move() {
-
         this.x += this.speed * this.direction
         this.sprite.style.left = this.x + 'px'
         this.checkCollision()
@@ -40,7 +39,6 @@ class Bullets {
         }
 
     }
-
     getScore() {
         this.sam.score += 100
         const score = document.getElementById('score')
@@ -65,7 +63,6 @@ class Bullets {
                 (this.y + this.height) > enemy.y) {
                 const enemyHurt = new Audio('src/Sounds/classic_hurt.mp3')
                 enemyHurt.play()
-
                 enemy.health -= 1
                 if (enemy.health <= 0) {
                     enemy.isDead = true;
@@ -73,7 +70,7 @@ class Bullets {
                 }
                 this.getScore()
                 this.removeBullet()
-                console.log(enemy.health)
+
                 return
             }
         }
