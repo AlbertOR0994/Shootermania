@@ -56,26 +56,6 @@ class Bullets {
             this.bullets.splice(index, 1);
         }
     }
-    /*     checkCollision() {
-            for (let i = 0; i < this.enemies.length; i++) {
-                const enemy = this.enemies[i];
-                if (this.x < (enemy.x + enemy.width) &&
-                    (this.x + this.width) > enemy.x &&
-                    this.y < (enemy.y + enemy.height) &&
-                    (this.y + this.height) > enemy.y) {
-                    const enemyHurt = new Audio('src/Sounds/classic_hurt.mp3')
-                    enemyHurt.play()
-                    enemy.removeEnemy();
-            
-                    this.getScore()
-                    this.removeBullet();
-
-                    
-                    
-                }
-            }
-        } */
-
     checkCollision() {
         for (let i = 0; i < this.enemies.length; i++) {
             const enemy = this.enemies[i];

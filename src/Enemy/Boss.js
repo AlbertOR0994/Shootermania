@@ -53,20 +53,7 @@ class Boss extends Enemy {
     
     }
 
-    checkStatus(){
-        if(this.health === 0){this.isDead = true}
-        if(this.isDead === true){ 
-            this.parent.removeChild(this.sprite)
-            const index = this.enemies.indexOf(this);
-        if (index !== -1) {
-            this.enemies.splice(index, 1);
-        }
-        clearInterval(this.timerEnemy)
-
-          }
-    
-        
-      }
+  
     
 }
 
