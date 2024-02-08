@@ -1,45 +1,117 @@
-.main {
-      border: solid 1px black;
+@font-face {
+    font-family: 'pixel';
+    src: url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
+}
+
+
+
+#main {
+    border: solid 1px black;
     width: 90em;
     height: 50em;
     margin: 0 auto;
     position: relative;
     top: 50px;
-    background-size:contain;
-    background-color: red;
+    background-size: cover;
+    background-image: url('../assets/background/image.jpg');
+    animation: test 3s;
+    animation-iteration-count: infinite;
 }
+
+@keyframes test {
+    0% {
+        top: 5px;
+    }
+
+    50% {
+        top: 0px;
+    }
+
+    100% {
+        top: 5px;
+
+    }
+}
+
 /* Estadisticas generales de la partida */
 #status {
-    background-color: yellow;
-    border: solid 1px black;
+
     width: 80em;
     margin: 0 auto;
     height: 2.5em;
     display: flex;
 }
+
 /* Cada estadistica */
 .stats {
-    background-color: aqua;
-    border: solid 1px black;
-    height: 40px;
+
+
+    height: 55px;
     width: 200px;
     margin: 0 auto;
+    font-weight: 800;
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 20px 20px 10px 10px;
+    filter: drop-shadow(10px 10px 4px black);
+    display: grid;
+    align-items: center;
+    text-align: center;
+
 }
+
+/* Stats Banners */
+
+#health {
+
+    background-image: url('../assets/background/rojo.png');
+    background-size: cover;
+
+}
+
+#score {
+
+    background-image: url('../assets/background/amarillo.png');
+    background-size: cover;
+
+}
+
+#bullets {
+
+    background-image: url('../assets/background/azul.png');
+    background-size: cover;
+
+}
+
+
+
+/*imagenes stats*/
+/* #heart{
+
+    z-index: 4;
+    
+} */
+
 /* Zona de juego  */
 #game {
-background-color: green;
-    width: 90em;
-    height: 15em;
+    display: flex;
+    width: 100em;
+    height: 90em;
     margin: 0 auto;
     position: relative;
     top: 500px;
+    overflow: visible;
+    z-index: 1;
+
 }
+
 /* Web en negro para no sangrar los ojos :) */
-html{
+html {
     background-color: black;
 }
+
 /* Pantalla de menú */
-#pre-game{
+#pre-game {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -49,29 +121,40 @@ html{
     height: 50em;
     margin: 0 auto;
     position: absolute;
-    background-size:contain;
-    background-image: url(./../assets/background/9SYf0EO.png);
+    background-size: contain;
+    background-image: url('../assets/background/9SYf0EO.png');
     z-index: 5;
+
 }
+
 /* botones */
-.btn{
-    padding: 20px 30px 20px 30px;
+.btn {
+    /* padding: 20px 30px 20px 30px; */
+    box-sizing: border-box;
+    width: 140px;
+    height: 80px;
     background: radial-gradient(blue, black);
     color: white;
     margin-top: 20px;
+    font-size: 20px;
     font-weight: 800;
     font-family: Arial, Helvetica, sans-serif;
     filter: drop-shadow(10px 10px 4px black);
+    border: solid 1px white;
+    border-radius: 20px;
+
 }
+
 /* efecto para los botones */
-.btn:hover{
-    background: radial-gradient(green,black);
-    color:yellow;
+.btn:hover {
+    background: radial-gradient(green, black);
+    color: yellow;
     font-weight: 800;
 }
+
 /*Cuadro de menu */
-#menu{
-    display:flex;
+#menu {
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -82,7 +165,10 @@ html{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     border-radius: 20px 20px 10px 10px;
     filter: drop-shadow(10px 10px 4px black);
+
 }
+
+/* ESTO */
 
 #tutorial-image {
     position: absolute;
@@ -90,32 +176,156 @@ html{
     left: 30%;
     top: 10%;
     display: none;
-    background-image: url(./../assets/background/prueba.jpg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 600px;
-    height: 600px;
 }
 
-/* Pendiente añadir imagen de controles para jugar */
-#close-tutorial{
-    position: absolute;
-    right: 10px;
-    margin-top: 0;
+/* ESTO */
+#tutorial-image img {
+    width: 53%;
+    filter: drop-shadow(10px 10px 4px black);
+    padding: 8%;
 }
+
+/* ESTO */
+#close-tutorial {
+    position: absolute;
+    right: 383px;
+    margin-top: 75px;
+    width: 93px;
+
+}
+
 #sam {
-    width: 50px;
-    height: 50px;
-    background-color: blue;
     position: absolute;
-    
-  }
+    background-image: url('../assets/background/Sam.png');
+    background-size: cover;
+    z-index: 2;
+}
 
-  #enemy{
+.enemy {
+    position: absolute;
+    background-image: url('../assets/background/Enemy.png');
+    background-size: cover;
+}
+
+.bullet {
+    background-size: cover;
+    position: absolute;
+    z-index: 1;
+    background: linear-gradient(0.25turn, yellow, red);
+    border-radius: 15px;
+    padding-left: 15px;
+
+
+}
+
+#pause {
+    margin: 0 auto;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 20em;
+    left: 35em;
+    background-color: rgba(128, 128, 128, 0.524);
+    padding: 30px 40px 30px 40px;
+    font-weight: 800;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 20px 20px 10px 10px;
+    filter: drop-shadow(10px 10px 4px black);
+    width: 200px;
+}
+
+#boss {
+
+    background-image: url('../assets/background/Boss.png');
+    background-size: cover;
+    position: absolute;
+}
+
+#defeat {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../assets/background/defeat.png');
+    position: absolute;
+    background-size: cover;
+    width: 90em;
+    height: 50em;
+    bottom: 60px;
+    color: white;
+}
+
+#dtext {
+    font-size: 120px;
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: rgba(0, 0, 0, 0.565);
+
+}
+
+#end {
+    background-color: rgba(0, 0, 0, 0.629);
+    color: red;
+    padding: 20px 20px 20px 20px;
+    border: solid 1px red;
+    font-size: 32px;
+    border-radius: 20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+#end:hover {
+    background-color: white;
+    color: red
+}
+
+#wtxt {
+    font-size: 120px;
+    color: yellow;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: blue;
+
+}
+
+#win {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../assets/background/win.jpg');
+    position: absolute;
+    background-size: cover;
+    width: 90em;
+    height: 50em;
+    bottom: 0px;
+    color: yellow;
+}
+
+#iwin {
+    font-size: 10em;
+    background-color: rgba(0, 0, 255, 0.498);
+    border: solid 1px black;
+}
+
+#wreset {
+    background-color: rgba(0, 0, 255, 0.362);
+    color: yellow;
+    padding: 20px 20px 20px 20px;
+    font-weight: 800;
+    font-size: 32px;
+    border-radius: 20px;
+    border: none;
+    filter: drop-shadow(90px);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+#enemy {
     background-color: red;
     width: 50px;
     height: 50px;
-  }
+}
 
 
 /* Ronboide para la calle - Bonus */
