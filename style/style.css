@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'pixel';
+    src: url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
+}
+
+
+
 #main {
     border: solid 1px black;
     width: 90em;
@@ -5,43 +12,46 @@
     margin: 0 auto;
     position: relative;
     top: 50px;
-    background-size:contain;
-    background-image: url('/assets/background/image.jpg');
+    background-size: cover;
+    background-image: url('../assets/background/image.jpg');
     animation: test 3s;
     animation-iteration-count: infinite;
+}
+
+@keyframes test {
+    0% {
+        top: 5px;
     }
 
-    @keyframes test {
-        0%{
-           top: 5px;
-        }  
-        50%{
-           top: 0px;
-        }
-        100%{
-           top: 5px;
-       
-        }
-      }
+    50% {
+        top: 0px;
+    }
+
+    100% {
+        top: 5px;
+
+    }
+}
 
 /* Estadisticas generales de la partida */
 #status {
-    
+
     width: 80em;
     margin: 0 auto;
     height: 2.5em;
     display: flex;
 }
+
 /* Cada estadistica */
 .stats {
-    
-   
+
+
     height: 55px;
     width: 200px;
     margin: 0 auto;
     font-weight: 800;
     color: black;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     border-radius: 20px 20px 10px 10px;
     filter: drop-shadow(10px 10px 4px black);
     display: grid;
@@ -54,21 +64,21 @@
 
 #health {
 
-    background-image: url('/assets/background/rojo.png');
+    background-image: url('../assets/background/rojo.png');
     background-size: cover;
 
 }
 
 #score {
 
-    background-image: url('/assets/background/amarillo.png');
+    background-image: url('../assets/background/amarillo.png');
     background-size: cover;
 
 }
 
 #bullets {
 
-    background-image: url('/assets/background/azul.png');
+    background-image: url('../assets/background/azul.png');
     background-size: cover;
 
 }
@@ -84,22 +94,24 @@
 
 /* Zona de juego  */
 #game {
-    display:flex;
+    display: flex;
     width: 100em;
     height: 90em;
     margin: 0 auto;
     position: relative;
     top: 500px;
-    overflow:visible;
+    overflow: visible;
     z-index: 1;
-    
+
 }
+
 /* Web en negro para no sangrar los ojos :) */
-html{
+html {
     background-color: black;
 }
+
 /* Pantalla de menú */
-#pre-game{
+#pre-game {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -109,14 +121,14 @@ html{
     height: 50em;
     margin: 0 auto;
     position: absolute;
-    background-size:contain;
-    background-image: url(./../assets/background/9SYf0EO.png);
+    background-size: contain;
+    background-image: url('../assets/background/9SYf0EO.png');
     z-index: 5;
-    
+
 }
 
 /* botones */
-.btn{
+.btn {
     /* padding: 20px 30px 20px 30px; */
     box-sizing: border-box;
     width: 140px;
@@ -130,17 +142,19 @@ html{
     filter: drop-shadow(10px 10px 4px black);
     border: solid 1px white;
     border-radius: 20px;
-    
+
 }
+
 /* efecto para los botones */
-.btn:hover{
-    background: radial-gradient(green,black);
-    color:yellow;
+.btn:hover {
+    background: radial-gradient(green, black);
+    color: yellow;
     font-weight: 800;
 }
+
 /*Cuadro de menu */
-#menu{
-    display:flex;
+#menu {
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -163,46 +177,47 @@ html{
     top: 10%;
     display: none;
 }
+
 /* Pendiente añadir imagen de controles para jugar en HTML*/
-#tutorial-image img{
-    width: 51%;
-    padding: 85px;
+#tutorial-image img {
+width: 53%;
     filter: drop-shadow(10px 10px 4px black);
-    
+    padding: 8%;
 }
 
-
-#close-tutorial{
-    position: absolute;
-    right: 400px;
+#close-tutorial {
+position: absolute;
+    right: 383px;
     margin-top: 75px;
     width: 93px;
-    
+        
 }
+
 #sam {
     position: absolute;
     background-image: url('../assets/background/Sam.png');
     background-size: cover;
     z-index: 2;
-   }
+}
 
-.enemy{
-    position:absolute;
+.enemy {
+    position: absolute;
     background-image: url('../assets/background/Enemy.png');
     background-size: cover;
 }
-.bullet{
+
+.bullet {
     background-size: cover;
     position: absolute;
     z-index: 1;
-    background: linear-gradient(0.25turn,yellow,red);
+    background: linear-gradient(0.25turn, yellow, red);
     border-radius: 15px;
     padding-left: 15px;
 
 
 }
 
-#pause{
+#pause {
     margin: 0 auto;
     position: absolute;
     display: flex;
@@ -219,12 +234,80 @@ html{
     width: 200px;
 }
 
-#boss{
-    
+#boss {
+
     background-image: url('../assets/background/Boss.png');
     background-size: cover;
     position: absolute;
 }
+
+#defeat {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../assets/background/defeat.png');
+    position: absolute;
+    background-size: cover;
+    width: 90em;
+    height: 50em;
+    bottom: 60px;
+    color: white;
+}
+
+#dtext {
+    font-size: 120px;
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: rgba(0, 0, 0, 0.565);
+
+}
+
+#end {
+    background-color: rgba(0, 0, 0, 0.629);
+    color: red;
+    padding: 20px 20px 20px 20px;
+    border: solid 1px red;
+    font-size: 32px;
+    border-radius: 20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+#end:hover {
+    background-color: white;
+    color: red
+}
+
+#wtxt {
+    font-size: 120px;
+    color: yellow;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: blue;
+
+}
+
+#win {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../assets/background/win.jpg');
+    position: absolute;
+    background-size: cover;
+    width: 90em;
+    height: 50em;
+    bottom: 0px;
+    color: yellow;
+}
+
+#iwin {
+    font-size: 10em;
+    background-color: rgba(0, 0, 255, 0.498);
+    border: solid 1px black;
+}
+
 
 /* Ronboide para la calle - Bonus */
 /* border-right: 60px solid transparent;
