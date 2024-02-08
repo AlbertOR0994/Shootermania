@@ -38,6 +38,7 @@ class Enemy {
             this.removeEnemy()
         }
     }
+    
     removeEnemy() {
 
         this.parent.removeChild(this.sprite)
