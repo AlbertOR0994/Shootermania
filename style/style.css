@@ -1,11 +1,8 @@
-@font-face {
-    font-family: 'pixel';
-    src: url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
-}
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@600;700&display=swap');
 
 
 
-#main {
+#main{
     border: solid 1px black;
     width: 90em;
     height: 50em;
@@ -13,7 +10,7 @@
     position: relative;
     top: 50px;
     background-size: contain;
-    background-image: url('/assets/background/image.jpg');
+    background-image: url('../assets/background/image.jpg');
     animation: test 3s;
     animation-iteration-count: infinite;
 }
@@ -44,14 +41,12 @@
 
 /* Cada estadistica */
 .stats {
-
-
     height: 55px;
     width: 200px;
     margin: 0 auto;
     font-weight: 800;
     color: black;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'pixelify sans', sans-serif;
     border-radius: 20px 20px 10px 10px;
     filter: drop-shadow(10px 10px 4px black);
     display: grid;
@@ -64,21 +59,21 @@
 
 #health {
 
-    background-image: url('/assets/background/rojo.png');
+    background-image: url('../assets/background/rojo.png');
     background-size: cover;
 
 }
 
 #score {
 
-    background-image: url('/assets/background/amarillo.png');
+    background-image: url('../assets/background/amarillo.png');
     background-size: cover;
 
 }
 
 #bullets {
 
-    background-image: url('/assets/background/azul.png');
+    background-image: url('../assets/background/azul.png');
     background-size: cover;
 
 }
@@ -93,7 +88,7 @@
 } */
 
 /* Zona de juego  */
-#game {
+#game{
     display: flex;
     width: 100em;
     height: 90em;
@@ -122,7 +117,7 @@ html {
     margin: 0 auto;
     position: absolute;
     background-size: contain;
-    background-image: url(./../assets/background/9SYf0EO.png);
+    background-image: url('../assets/background/9SYf0EO.png');
     z-index: 5;
 
 }
@@ -131,14 +126,14 @@ html {
 .btn {
     /* padding: 20px 30px 20px 30px; */
     box-sizing: border-box;
-    width: 140px;
-    height: 80px;
-    background: radial-gradient(blue, black);
-    color: white;
+    width: 10em;
+    height: 5em;
+    background-image: linear-gradient(to right bottom, #ff0000, #ff5800, #ff8300, #ffa700, #ffc800, #ffb900, #ffa900, #ff9a00, #ff4933, #ff006e, #e100b7, #0017ff);
+    color: rgb(0, 55, 254);
     margin-top: 20px;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 800;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'pixelify sans', sans-serif;
     filter: drop-shadow(10px 10px 4px black);
     border: solid 1px white;
     border-radius: 20px;
@@ -158,35 +153,47 @@ html {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgba(128, 128, 128, 0.524);
-    padding: 30px 40px 30px 40px;
+    background-image: url('../assets/menu/Dropped\ image.png');
+    background-size: cover;
+    padding: 15px 25px 15px 25px;
+    width: 12em;
+    height: 8em;
+    font-size: 58px;
     font-weight: 800;
-    color: white;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    border-radius: 20px 20px 10px 10px;
-    filter: drop-shadow(10px 10px 4px black);
+    color: rgb(212, 255, 0);
+    font-family: 'pixelify sans', sans-serif;
+    border-radius: 40px;
+    filter: drop-shadow(10px 10px 50px black);
 
 }
 
-
+/* ESTO */
 
 #tutorial-image {
     position: absolute;
     z-index: 10;
-    left: 30%;
-    top: 10%;
+    left: 27.5em;
+    top: 10em;
     display: none;
+    margin: 0 auto;
 }
 
-/* Pendiente añadir imagen de controles para jugar en HTML*/
+/* ESTO */
 #tutorial-image img {
-    width: 60%;
+    width: 35em;
+    filter: drop-shadow(10px 10px 4px black);
 }
 
+/* ESTO */
 #close-tutorial {
     position: absolute;
-    right: 265px;
-    margin-top: 0;
+    margin: 0 auto;
+    width: 50px;
+    height: 40px;
+    left:20em; 
+    color:red;
+    
+
 }
 
 #sam {
@@ -243,6 +250,7 @@ html {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: 'pixelify sans', sans-serif;
     background-image: url('../assets/background/defeat.png');
     position: absolute;
     background-size: cover;
@@ -255,7 +263,8 @@ html {
 #dtext {
     font-size: 120px;
     color: white;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: 'pixelify sans', sans-serif;
+    
     background-color: rgba(0, 0, 0, 0.565);
 
 }
@@ -266,8 +275,9 @@ html {
     padding: 20px 20px 20px 20px;
     border: solid 1px red;
     font-size: 32px;
+    font-family: 'pixelify sans', sans-serif;
     border-radius: 20px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    
 }
 
 #end:hover {
@@ -283,7 +293,7 @@ html {
 
 }
 
-#win{
+#win {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -291,30 +301,40 @@ html {
     align-items: center;
     background-image: url('../assets/background/win.jpg');
     position: absolute;
+    font-family: 'pixelify sans', sans-serif;
+    font-weight: 600;
     background-size: cover;
     width: 90em;
     height: 50em;
     bottom: 0px;
     color: yellow;
-    filter: drop-shadow(90px);
 }
-#iwin{
+
+#iwin {
     font-size: 10em;
     background-color: rgba(0, 0, 255, 0.498);
     border: solid 1px black;
-    filter: drop-shadow(90px);
+    font-family: 'pixelify sans', sans-serif;
 }
 
-#wreset{
+#wreset {
     background-color: rgba(0, 0, 255, 0.362);
     color: yellow;
     padding: 20px 20px 20px 20px;
     font-weight: 800;
     font-size: 32px;
     border-radius: 20px;
+    font-weight: 600;
     border: none;
     filter: drop-shadow(90px);
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: 'pixelify sans', sans-serif;
+
+}
+
+#enemy {
+    background-color: red;
+    width: 50px;
+    height: 50px;
 }
 
 

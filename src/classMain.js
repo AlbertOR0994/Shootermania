@@ -71,25 +71,26 @@ class Main {
 
 
       window.addEventListener('keyup', (e) => {
-        if(!this.test){
-        if (e.key === ' ') {
-          let bullet = new Bullets(this.player.x + 20, this.player.y + 50, 1, game, this.enemies, this.player, this.bullets)
-          if (this.player.directionX == 1) {
-            bullet.direction = 1
-            bullet.insertBullet()
-            this.bullets.push(bullet)
-            bullet.timerBullet = setInterval(bullet.move, 10)
+        if (!this.test) {
+          if (e.key === ' ') {
+            let bullet = new Bullets(this.player.x + 20, this.player.y + 50, 1, game, this.enemies, this.player, this.bullets)
+            if (this.player.directionX == 1) {
+              bullet.direction = 1
+              bullet.insertBullet()
+              this.bullets.push(bullet)
+              bullet.timerBullet = setInterval(bullet.move, 10)
 
 
-          }
-          else {
-            bullet.direction = -1
-            bullet.insertBullet()
-            this.bullets.push(bullet)
-            bullet.timerBullet = setInterval(bullet.move, 10)
+            }
+            else {
+              bullet.direction = -1
+              bullet.insertBullet()
+              this.bullets.push(bullet)
+              bullet.timerBullet = setInterval(bullet.move, 10)
+            }
           }
         }
-      }}
+      }
       )
 
       window.addEventListener('keydown', (e) => {
@@ -103,10 +104,20 @@ class Main {
         this.player.moveX()
         this.player.moveY()
         this.samWin()
-        if (this.player.health <= 0 || this.player.score >= 1500 ) {
+        if (this.player.health <= 0 || this.player.score >= 1500) {
+          gameMusic.pause()
           this.gameOver()
         }
       }, 24)
+    })
+    
+    tutorial.addEventListener('click', () => {
+      pTutorial.style.display = 'block'
+
+    })
+
+    closeTuto.addEventListener('click', () => {
+      pTutorial.style.display = 'none'
     })
   }
 
@@ -116,9 +127,11 @@ class Main {
     if (this.player.score == 1500) {
       const divwin = document.createElement('div')
       divwin.setAttribute('id', 'win')
-      divwin.innerHTML = "<div id='iwin'>Victory!</div> <button id='wreset'>Restart</button>"
+      divwin.innerHTML = "<div id='iwin'>VICTORY!</div> <button id='wreset'>RESTART</button>"
       main.appendChild(divwin)
       const wrest = document.getElementById('wreset')
+      const victoryMusic = new Audio('src/Sounds/victory.mp3')
+      victoryMusic.play()
       wrest.addEventListener('click', () => {
         window.location.reload()
       })
@@ -177,7 +190,7 @@ class Main {
     const test = [...document.getElementsByClassName('enemy')]
     this.bullets.forEach((e) => {
       clearInterval(e.timerBullet)
-      
+
     })
     this.enemies.forEach((e) => {
       clearInterval(e.timerEnemy)
@@ -186,7 +199,7 @@ class Main {
     test.forEach((e) => {
       e.remove()
     })
-    
+
     this.enemies = []
     this.player.sprite.remove()
     clearInterval(this.timerSpawn)

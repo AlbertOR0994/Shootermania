@@ -44,7 +44,7 @@ class Bullets {
     getScore() {
         this.sam.score += 100
         const score = document.getElementById('score')
-        score.innerText = `${this.sam.score} Score`
+        score.innerText = `${this.sam.score} SCORE`
 
     }
 
