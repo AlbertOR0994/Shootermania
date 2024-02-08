@@ -68,22 +68,7 @@ class Bullets {
                 this.getScore()
                 this.removeBullet();
                 enemy.removeEnemy();
-                this.samWin()
             }
-        }
-    }
-    samWin() {
-        const enemigo = [...this.enemies]
-        const main = document.getElementById('main')
-        if (this.sam.score == 100) {
-            console.log(this.sam.score)
-            const divwin = document.createElement('div')
-            divwin.setAttribute('id', 'win')
-            divwin.innerHTML = "<div id='iwin'>Victory!</div>"
-            main.appendChild(divwin)
-            clearInterval(this.timerId)
-            main.removeChild(this.parent)
-            this.sam
         }
     }
 }  

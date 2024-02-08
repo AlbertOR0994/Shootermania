@@ -67,7 +67,7 @@ class Enemy {
                 adefeat.play()
                 const defeat = document.createElement('div')
                 defeat.setAttribute('id', 'defeat')
-                defeat.innerHTML = "<div id='dtext'>Defeated</div> <button id='end'>reset?</button>"
+                defeat.innerHTML = "<div id='dtext'>Defeated</div> <button id='end'>Again?</button>"
                 this.parent.appendChild(defeat)
                 const rest = document.getElementById('end')
                 rest.addEventListener('click', () => {
@@ -76,11 +76,5 @@ class Enemy {
                 this.sam.sprite.remove()
             }
         }
-    }
-
-
-    // Disparar a un enemigo
-    shootSam() {
-
     }
 }

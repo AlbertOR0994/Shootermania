@@ -53,10 +53,5 @@ class Sam {
         this.isDead = true
       }
     }
-    // Disparar a un enemigo
-    shootEnemy(){
-      const shoot = document.createElement('div')
-      shoot.setAttribute('class','shoot')
-    }
 
 }
