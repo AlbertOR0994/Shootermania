@@ -1,9 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@600;700&display=swap');
+
 @font-face {
-    font-family: 'pixel';
-    src: url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
+    font-family: ''; 
+    src: url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap') format('truetype'); 
 }
-
-
 
 #main {
     border: solid 1px black;
