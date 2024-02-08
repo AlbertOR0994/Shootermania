@@ -2,7 +2,7 @@ class Enemy {
     constructor(x, y, directionX, health, parent, sam, enemies) {
         this.x = x
         this.y = y
-        this.health = health
+        this.health = 1
         this.speed = 2
         this.parent = parent
         this.sam = sam
@@ -13,6 +13,7 @@ class Enemy {
         this.height = 75
         this.timerEnemy
         this.enemies = enemies
+        this.isDead = false
 
         this.moveX = this.moveX.bind(this)
 
@@ -30,7 +31,7 @@ class Enemy {
     }
     moveX() {
         this.x += this.speed * this.directionX
-        if (this.x >= -10  && this.x <= 1390) {
+        if (this.x >= -10 && this.x <= 1390) {
             this.sprite.style.left = this.x + 'px'
             this.checkCollision()
         }
@@ -38,7 +39,7 @@ class Enemy {
             this.removeEnemy()
         }
     }
-
+    
     removeEnemy() {
 
         this.parent.removeChild(this.sprite)
@@ -58,14 +59,25 @@ class Enemy {
             (this.y + this.height) > this.sam.y) {
      
             this.sam.health -= 1
-            this.removeEnemy(1)
+            this.removeEnemy()
             const samHitted = new Audio('src/Sounds/terraria-male-player-hurt-sound.mp3')
             samHitted.volume = 1
             samHitted.play()
-        }
-    }
-    // Disparar a un enemigo
-    shootSam() {
 
+            if (this.sam.health == 0) {
+
+                const adefeat = new Audio('src/Sounds/zg-survival-defeat-sound.mp3')
+                adefeat.play()
+                const defeat = document.createElement('div')
+                defeat.setAttribute('id', 'defeat')
+                defeat.innerHTML = "<div id='dtext'>Defeated</div> <button id='end'>Again?</button>"
+                this.parent.appendChild(defeat)
+                const rest = document.getElementById('end')
+                rest.addEventListener('click', () => {
+                    window.location.reload()
+                })
+                this.sam.sprite.remove()
+            }
+        }
     }
 }
