@@ -168,7 +168,7 @@ html {
 
 }
 
-
+/* ESTO */
 
 #tutorial-image {
     position: absolute;
@@ -178,13 +178,13 @@ html {
     display: none;
 }
 
-/* Pendiente añadir imagen de controles para jugar en HTML*/
+/* ESTO */
 #tutorial-image img {
 width: 53%;
     filter: drop-shadow(10px 10px 4px black);
     padding: 8%;
 }
-
+/* ESTO */
 #close-tutorial {
 position: absolute;
     right: 383px;
