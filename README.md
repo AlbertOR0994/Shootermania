@@ -1,7 +1,6 @@
 # Shootermania
 
-![Shootermania](https://github.com/AlbertOR0994/Shootermania/assets/156690424/10d888cf-3bbb-452d-a80f-f55fa579fc5c)
-
+![Shootermania](https://github.com/AlbertOR0994/Shootermania/assets/156690424/f3675ddf-c2dd-4a67-8214-b323b03c5c38)
 
 # The Game
 
