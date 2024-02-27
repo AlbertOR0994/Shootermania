@@ -16,7 +16,7 @@ class Main {
 
 
   insertGame() {
-    console.log(this.parent)
+
     let juego = document.createElement('div')
     juego.setAttribute('id', 'game')
     juego.style.width = this.width + 'em'
@@ -37,7 +37,7 @@ class Main {
 
 
     start.addEventListener('click', () => {
-      console.log(this.bullets)
+
       const gameMusic = new Audio('src/Sounds/2019-12-11_-_Retro_Platforming_-_David_Fesliyan.mp3')
       gameMusic.volume = 0.2
       gameMusic.play()
@@ -71,25 +71,26 @@ class Main {
 
 
       window.addEventListener('keyup', (e) => {
-        if(!this.test){
-        if (e.key === ' ') {
-          let bullet = new Bullets(this.player.x + 20, this.player.y + 50, 1, game, this.enemies, this.player, this.bullets)
-          if (this.player.directionX == 1) {
-            bullet.direction = 1
-            bullet.insertBullet()
-            this.bullets.push(bullet)
-            bullet.timerBullet = setInterval(bullet.move, 10)
+        if (!this.test) {
+          if (e.key === ' ') {
+            let bullet = new Bullets(this.player.x + 20, this.player.y + 50, 1, game, this.enemies, this.player, this.bullets)
+            if (this.player.directionX == 1) {
+              bullet.direction = 1
+              bullet.insertBullet()
+              this.bullets.push(bullet)
+              bullet.timerBullet = setInterval(bullet.move, 10)
 
 
-          }
-          else {
-            bullet.direction = -1
-            bullet.insertBullet()
-            this.bullets.push(bullet)
-            bullet.timerBullet = setInterval(bullet.move, 10)
+            }
+            else {
+              bullet.direction = -1
+              bullet.insertBullet()
+              this.bullets.push(bullet)
+              bullet.timerBullet = setInterval(bullet.move, 10)
+            }
           }
         }
-      }}
+      }
       )
 
       window.addEventListener('keydown', (e) => {
@@ -103,22 +104,34 @@ class Main {
         this.player.moveX()
         this.player.moveY()
         this.samWin()
-        if (this.player.health <= 0 || this.player.score >= 100) {
+        if (this.player.health <= 0 || this.player.score >= 1500) {
+          gameMusic.pause()
           this.gameOver()
         }
       }, 24)
+    })
+    
+    tutorial.addEventListener('click', () => {
+      pTutorial.style.display = 'block'
+
+    })
+
+    closeTuto.addEventListener('click', () => {
+      pTutorial.style.display = 'none'
     })
   }
 
 
   samWin() {
     const main = document.getElementById('main')
-    if (this.player.score == 100) {
+    if (this.player.score == 1500) {
       const divwin = document.createElement('div')
       divwin.setAttribute('id', 'win')
-      divwin.innerHTML = "<div id='iwin'>Victory!</div> <button id='wreset'>Restart</button>"
+      divwin.innerHTML = "<div id='iwin'>VICTORY!</div> <button id='wreset'>RESTART</button>"
       main.appendChild(divwin)
       const wrest = document.getElementById('wreset')
+      const victoryMusic = new Audio('src/Sounds/victory.mp3')
+      victoryMusic.play()
       wrest.addEventListener('click', () => {
         window.location.reload()
       })
@@ -154,7 +167,7 @@ class Main {
 
   bossAppears() {
     const game = document.getElementById('game')
-    if (this.counter <= 0 && this.player.score >= 3000) {
+    if (this.counter <= 0 && this.player.score >= 500) {
       let boss = new Boss(this.player, game, this.enemies)
       boss.insertBoss()
       this.enemies.push(boss)
@@ -170,23 +183,23 @@ class Main {
       this.createEnemyRight()
       this.createEnemyLeft()
       this.bossAppears()
-    }, 1000)
+    }, 3000)
   }
   gameOver() {
     this.test = true
     const test = [...document.getElementsByClassName('enemy')]
     this.bullets.forEach((e) => {
       clearInterval(e.timerBullet)
-      
+
     })
     this.enemies.forEach((e) => {
       clearInterval(e.timerEnemy)
-      console.log(e)
+
     })
     test.forEach((e) => {
       e.remove()
     })
-    
+
     this.enemies = []
     this.player.sprite.remove()
     clearInterval(this.timerSpawn)

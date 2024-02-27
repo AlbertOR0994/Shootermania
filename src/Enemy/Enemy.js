@@ -2,8 +2,8 @@ class Enemy {
     constructor(x, y, directionX, health, parent, sam, enemies) {
         this.x = x
         this.y = y
-        this.health = health
-        this.speed = 3
+        this.health = 1
+        this.speed = 2
         this.parent = parent
         this.sam = sam
         this.timerId = null
@@ -13,6 +13,7 @@ class Enemy {
         this.height = 75
         this.timerEnemy
         this.enemies = enemies
+        this.isDead = false
 
         this.moveX = this.moveX.bind(this)
 
@@ -38,6 +39,7 @@ class Enemy {
             this.removeEnemy()
         }
     }
+
     removeEnemy() {
 
         this.parent.removeChild(this.sprite)
@@ -48,6 +50,7 @@ class Enemy {
 
         clearInterval(this.timerEnemy)
     }
+
     checkCollision() {
 
         if (this.x < (this.sam.x + this.sam.width) &&
@@ -67,7 +70,7 @@ class Enemy {
                 adefeat.play()
                 const defeat = document.createElement('div')
                 defeat.setAttribute('id', 'defeat')
-                defeat.innerHTML = "<div id='dtext'>Defeated</div> <button id='end'>Again?</button>"
+                defeat.innerHTML = "<div id='dtext'>LOSER</div> <button id='end'>AGAIN?</button>"
                 this.parent.appendChild(defeat)
                 const rest = document.getElementById('end')
                 rest.addEventListener('click', () => {
