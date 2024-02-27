@@ -13,5 +13,5 @@ In our game the trick is getting into someone else's shoes , in this case a red 
 
 
 # Play our Game
-[Shootermania]([https://pages.github.com/](https://albertor0994.github.io/Shootermania/)https://albertor0994.github.io/Shootermania/).
+[Shootermania](https://albertor0994.github.io/Shootermania/)
 
